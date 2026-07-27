@@ -1,9 +1,12 @@
-const toggleButton = document.getElementById('menu-toggle');
-const nav = document.getElementById('main-nav');
+const menuToggle = document.getElementById("menu-toggle");
+const mainNav = document.getElementById("main-nav");
+const topbar = document.getElementById("topbar");
 
-if (toggleButton && nav) {
-  toggleButton.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    toggleButton.setAttribute('aria-expanded', String(isOpen));
-  });
-}
+menuToggle?.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+window.addEventListener("scroll", () => {
+  topbar.classList.toggle("scrolled", window.scrollY > 12);
+});
