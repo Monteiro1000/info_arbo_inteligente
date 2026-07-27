@@ -58,13 +58,14 @@ img {
   color: white;
 }
 
-.brand-mark {
-  width: 2.7rem;
-  height: 2.7rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #dff6dc 0%, #7fbe8a 35%, #2d6b43 100%);
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.08);
+.brand-logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 
 .brand-text {
