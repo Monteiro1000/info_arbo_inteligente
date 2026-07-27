@@ -9,7 +9,7 @@
   --text: #0f1f2d;
   --muted: #5d715f;
   --shadow: 0 16px 40px rgba(2, 24, 63, 0.18);
-  --font-display: "Orbitron", "Segoe UI", sans-serif;
+  --font-display: "Fraunces", "Segoe UI", serif;
   --font-body: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-family: var(--font-body);
 }
@@ -416,9 +416,7 @@ img {
     opacity: 0;
   }
 }
-  font-size: 0.72rem;
-  color: var(--muted);
-}
+  
 
 .hero-card {
   position: absolute;
