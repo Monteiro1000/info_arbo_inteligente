@@ -9,7 +9,7 @@
   --text: #0f1f2d;
   --muted: #5d715f;
   --shadow: 0 16px 40px rgba(2, 24, 63, 0.18);
-  --font-display: "Fraunces", "Segoe UI", serif;
+  --font-display: "Orbitron", "Segoe UI", sans-serif;
   --font-body: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-family: var(--font-body);
 }
