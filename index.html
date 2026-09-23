@@ -4,19 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arborização Inteligente</title>
-  <meta name="description" content="Site informacional do projeto Arborização Inteligente, voltado para o monitoramento arbóreo e cidades mais verdes." />
+  <title>Arborização Inteligente | Monitoramento Arbóreo para Cidades mais Verdes</title>
+  <meta name="description" content="Sistema de monitoramento arbóreo inteligente capaz de analisar déficit vegetal, saúde arbórea e espécies invasoras com sensores IoT, drones e IA nas cidades sergipanas e brasileiras." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;700;800&display=swap" rel="stylesheet" />
 </head>
 
 <body>
+  <!-- HEADER & NAVBAR -->
   <header class="site-header" id="home">
     <div class="topbar container" id="topbar">
       <a class="brand" href="#home" aria-label="Página inicial Arborização Inteligente">
-        <img class="brand-logo" src="assets/salvando-a-terra.png" alt="Logo Arborização Inteligente" />
+        <img class="brand-logo" src="assets/logo.png" alt="Logo Arborização Inteligente" />
         <span class="brand-text">
           <strong>Arborização Inteligente</strong>
           <small>Monitoramento arbóreo para cidades mais verdes</small>
@@ -30,141 +31,699 @@
       </button>
 
       <nav class="main-nav" id="main-nav" aria-label="Menu principal">
-        <a class="nav-link" href="#sobre">Sobre</a>
-        <a class="nav-link" href="#projeto">Projeto</a>
-        <a class="nav-link" href="#noticias">Blog</a>
+        <a class="nav-link" href="#arborizacao">Arborização</a>
+        <a class="nav-link" href="#solucao">Solução & Planos</a>
         <a class="nav-link" href="#quem-somos">Quem somos</a>
+        <a class="nav-link" href="#eventos">Eventos</a>
+        <a class="nav-link" href="#noticias">Blog</a>
         <a class="nav-link" href="#contato">Contato</a>
-        <a class="contact-link" href="#contato">Entrar em contato</a>
+        <a class="contact-link" href="#contato">Falar com a equipe</a>
       </nav>
     </div>
 
+    <!-- HERO SECTION -->
     <div class="hero container">
       <div class="hero-copy">
-        <p class="eyebrow">Sistema de monitoramento arbóreo</p>
-        <h1>Arborização Inteligente</h1>
-        <p class="lead">
-          O projeto Arborização Inteligente tem como objetivo promover a arborização
-          urbana, inicialmente nas cidades sergipanas, considerando que Sergipe apresenta o
-          menor índice de vias arborizadas do Brasil, segundo o Censo do IBGE
-          (2022). A solução
-          busca fornecer dados estratégicos que auxiliem tanto a população quanto a gestão
-          pública na tomada de decisões mais eficientes, ampliando os impactos positivos da
-          arborização urbana.
+        <p class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Sistema de Monitoramento Arbóreo Inteligente
         </p>
+        <h1>Arborização Inteligente</h1>
+        <p class="hero-slogan">"Uma cidade inteligente é aquela que usa tecnologia para preservar a vida."</p>
+        <p class="lead">
+          Nascemos com o propósito de transformar a arborização urbana através de dados estratégicos, telemetria IoT e inteligência artificial. Considerando que Sergipe apresenta o <strong>menor índice de vias arborizadas do Brasil</strong>, segundo o <strong>Censo do IBGE (2022)</strong>, criamos uma solução completa para fornecer dados que auxiliem a gestão pública e a população na tomada de decisões eficientes, reduzindo ilhas de calor e priorizando espécies nativas.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#solucao" class="btn btn-primary">Conhecer a Solução</a>
+          <a href="#contato" class="btn btn-outline">Entrar em Contato</a>
+        </div>
 
         <ul class="hero-highlights">
           <li>
             <span class="highlight-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 3c-4 0-8 3-8 9 0 4 3 7 7 8 1-5 3-9 9-13-2-2-5-4-8-4z" fill="currentColor" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M12 3c-4 0-8 3-8 9 0 4 3 7 7 8 1-5 3-9 9-13-2-2-5-4-8-4z" fill="currentColor"/></svg>
             </span>
-            <span>Monitoramento</span>
+            <span>Sensores IoT (ESP32)</span>
           </li>
           <li>
             <span class="highlight-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="14" width="4" height="7" rx="1" fill="currentColor" />
-                <rect x="10" y="9" width="4" height="12" rx="1" fill="currentColor" />
-                <rect x="17" y="4" width="4" height="17" rx="1" fill="currentColor" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="7" r="1.6" fill="currentColor"/></svg>
             </span>
-            <span>Análise de dados</span>
+            <span>Drones & IA Preventiva</span>
           </li>
           <li>
             <span class="highlight-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M3 17l5-5 4 4 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <circle cx="21" cy="7" r="1.6" fill="currentColor" />
-              </svg>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
             </span>
-            <span>Integração de tecnologias</span>
+            <span>Satélite & Planos</span>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="currentColor"/></svg>
+            </span>
+            <span>Alinhado aos ODS da ONU</span>
           </li>
         </ul>
       </div>
-
-
     </div>
 
     <svg class="header-canopy" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
       <path class="canopy-path" d="M0,120 C150,180 300,40 450,110 C600,180 750,40 900,110 C1050,180 1150,90 1200,120" />
     </svg>
   </header>
-  <main>
-    <!-- Sobre nós -->
-    <section class="about-section" id="sobre">
-      <!-- Camadas decorativas de fundo -->
-      <div class="tech-grid" aria-hidden="true"></div>
-      <div class="about-particles" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
 
-      <div class="container about-layout">
-        <div class="about-copy">
+  <main>
+    <!-- ============================================================
+         1. SEÇÃO: ARBORIZAÇÃO (O que é, Brasil, Nordeste e Sergipe)
+         ============================================================ -->
+    <section class="arborizacao-section" id="arborizacao">
+      <div class="tech-grid" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center">
           <p class="eyebrow eyebrow-dark">
             <span class="eyebrow-dot"></span>
-            Sobre nós
+            Diagnóstico & Contexto
           </p>
-          <h2>Uma iniciativa voltada à <span class="text-glow">cidade inteligente</span> e ao futuro urbano</h2>
+          <h2>Arborização: O que é e por que é um desafio urgente?</h2>
           <p class="section-text">
-            A Arborização Inteligente é um projeto que une tecnologia, dados e planejamento urbano para fortalecer a preservação das árvores nas cidades. Nossa proposta é transformar a gestão ambiental em uma prática mais estratégica, acessível e orientada por evidências.
+            Compreenda a importância vital da cobertura arbórea urbana e o cenário alarmante enfrentado no Brasil, na região Nordeste e especialmente no estado de Sergipe.
           </p>
-
-          <div class="about-highlights">
-            <div class="about-card">
-              <div class="about-card-icon icon-tech" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                  <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6" />
-                </svg>
-              </div>
-              <strong>Missão</strong>
-              <p>Promover cidades mais verdes, saudáveis e resilientes por meio de soluções de monitoramento e análise.</p>
-            </div>
-            <div class="about-card">
-              <div class="about-card-icon icon-leaf" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M20 4C10 4 4 10 4 20c10 0 16-6 16-16Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
-                  <path d="M4 20 12 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                </svg>
-              </div>
-              <strong>Visão</strong>
-              <p>Consolidar um modelo de gestão urbana capaz de integrar informação, participação e cuidado ambiental.</p>
-            </div>
-          </div>
-
-          <ul class="about-points">
-            <li>Monitoramento contínuo de áreas arborizadas</li>
-            <li>Indicadores que orientam o planejamento e a manutenção</li>
-            <li>Dados mais claros para gestores e população</li>
-          </ul>
         </div>
 
-        <div class="about-media">
-          <div class="about-image-card">
-            <span class="hud-corner hud-tl" aria-hidden="true"></span>
-            <span class="hud-corner hud-tr" aria-hidden="true"></span>
-            <span class="hud-corner hud-bl" aria-hidden="true"></span>
-            <span class="hud-corner hud-br" aria-hidden="true"></span>
-            <span class="scanline" aria-hidden="true"></span>
-            <img src="material_site_arborizacao_inteligente/SAVE_20251003_225236.jpg" alt="Equipe envolvida no projeto Arborização Inteligente" loading="lazy" />
+        <div class="arborizacao-grid">
+          <!-- Card 1: O que é -->
+          <article class="arbor-card reveal">
+            <div class="arbor-card-badge">Fundamento</div>
+            <div class="arbor-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22v-8M12 14c-4 0-7-3-7-7 0-3 3-5 7-5s7 2 7 5c0 4-3 7-7 7z"/>
+                <path d="M9 18l3-4 3 4"/>
+              </svg>
+            </div>
+            <h3>O que é Arborização Urbana?</h3>
+            <p>
+              Arborização urbana é o conjunto de toda a vegetação de porte arbóreo presente em vias públicas, praças, parques e calçadas das cidades. Mais do que embelezamento estético, árvores são infraestrutura verde vital:
+            </p>
+            <ul class="arbor-list">
+              <li><strong>Conforto Térmico:</strong> Redução comprovada de 2°C a 5°C na temperatura dos microclimas urbanos.</li>
+              <li><strong>Qualidade do Ar:</strong> Retenção de gases poluentes e particulados nocivos à saúde respiratória.</li>
+              <li><strong>Drenagem e Solo:</strong> Aumento da infiltração da água da chuva, evitando alagamentos e erosões.</li>
+              <li><strong>Qualidade de Vida:</strong> Redução comprovada do estresse e promoção da biodiversidade local.</li>
+            </ul>
+          </article>
+
+          <!-- Card 2: Brasil e Nordeste -->
+          <article class="arbor-card reveal" style="--delay: 0.15s">
+            <div class="arbor-card-badge">Cenário Regional</div>
+            <div class="arbor-icon-wrapper warning">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3>O Problema no Brasil e no Nordeste</h3>
+            <p>
+              Grande parte das cidades brasileiras e nordestinas se expandiu sem um planejamento ambiental preventivo. Esse descompasso gerou desafios graves:
+            </p>
+            <ul class="arbor-list">
+              <li><strong>Ausência de Planejamento Técnico:</strong> Espécies plantadas sem critérios de porte, raízes e compatibilidade com redes elétricas.</li>
+              <li><strong>Conflito com Redes Elétricas:</strong> Quedas constantes de energia decorrentes de galhos em contato com a fiação e podas drásticas mutiladoras.</li>
+              <li><strong>Espécies Invasoras:</strong> Disseminação descontrolada de plantas invasoras que sufocam e empobrecem a flora nativa local.</li>
+              <li><strong>Falta de Dados Concretos:</strong> Prefeituras e secretarias carecem de laudos e mapas digitais para gerir seu patrimônio verde.</li>
+            </ul>
+          </article>
+
+          <!-- Card 3: Sergipe e Censo IBGE 2022 -->
+          <article class="arbor-card highlight-card reveal" style="--delay: 0.3s">
+            <div class="arbor-card-badge alert">Alerta Oficial IBGE</div>
+            <div class="arbor-icon-wrapper danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <div class="stat-highlight">
+              <span class="stat-num">Menor</span>
+              <span class="stat-label">Índice de vias arborizadas do Brasil (IBGE 2022)</span>
+            </div>
+            <h3>O Desafio Crítico em Sergipe</h3>
+            <p>
+              Segundo os dados oficiais do <strong>Censo do IBGE (2022)</strong>, <strong>Sergipe é o estado brasileiro com o menor índice de vias públicas arborizadas de todo o país</strong>.
+            </p>
+            <p>
+              Essa escassez severa potencializa diretamente o fenômeno das <strong>ilhas de calor</strong>, elevando as temperaturas nas ruas, aumentando a incidência de problemas de saúde pública e diminuindo o bem-estar da população. A <strong>Arborização Inteligente</strong> nasceu em solo sergipano exatamente para transformar essa realidade por meio da ciência e da tecnologia.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. SEÇÃO: SOLUÇÃO (Os 4 Planos, Sensores, Hardware, IA)
+         ============================================================ -->
+    <section class="solution-section" id="solucao">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Tecnologia & Inovação
+          </p>
+          <h2>Nossa Solução: Monitoramento Arbóreo Inteligente</h2>
+          <p class="section-text">
+            Um sistema pioneiro capaz de analisar áreas com déficit vegetal, avaliar a saúde das árvores em tempo real e diferenciar espécies nativas de invasoras por meio de sensores IoT, inteligência artificial e drones.
+          </p>
+        </div>
+
+        <!-- Hardware & Tecnologias -->
+        <div class="tech-ecosystem-box reveal">
+          <div class="tech-box-header">
+            <h3>Tecnologias Integradas ao Sistema</h3>
+            <p>Conheça os componentes de hardware e software que operam em campo e na nuvem:</p>
           </div>
-          <div class="about-badge">
-            <img src="assets/salvando-a-terra.png" alt="Ícone do projeto Arborização Inteligente" loading="lazy" />
-            <span>Projeto de impacto social e ambiental</span>
+          <div class="tech-pills-grid">
+            <div class="tech-pill-item">
+              <div class="pill-icon">⚡</div>
+              <div>
+                <strong>Microcontrolador ESP32</strong>
+                <span>Cérebro IoT para processamento local, telemetria sem fio e baixo consumo energético.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <div class="pill-icon">🌡️</div>
+              <div>
+                <strong>Sensores DHT11 & AHT25</strong>
+                <span>Medição precisa de temperatura e umidade relativa do ar, diagnosticando a qualidade do microclima.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <div class="pill-icon">🌱</div>
+              <div>
+                <strong>Sensor de Umidade do Solo</strong>
+                <span>Monitoramento das condições hídricas radiculares para prevenção de estresse vegetal.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <div class="pill-icon">🤖</div>
+              <div>
+                <strong>IA & Visão Computacional</strong>
+                <span>Modelos preditivos para identificar espécies nativas vs invasoras e detecção preventiva de doenças.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <div class="pill-icon">📷</div>
+              <div>
+                <strong>Câmeras Urbanas Futuras</strong>
+                <span>Varredura automatizada das ruas para contagem de árvores e monitoramento da copa arbórea.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <div class="pill-icon">🎓</div>
+              <div>
+                <strong>Ações com a Comunidade</strong>
+                <span>Palestras interativas em escolas e universidades para sensibilização e educação ambiental.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OS 4 PLANOS DA SOLUÇÃO -->
+        <div class="plans-container">
+          <div class="plans-title-wrapper text-center">
+            <span class="plans-badge">Modelos de Atendimento</span>
+            <h3>Os 4 Planos do Projeto Arborização Inteligente</h3>
+            <p class="section-text">Estruturados sob medida para atender desde pequenos municípios até grandes centros urbanos e indústrias:</p>
+          </div>
+
+          <div class="plans-grid">
+            <!-- Plano 1: Base -->
+            <div class="plan-card reveal">
+              <div class="plan-header">
+                <span class="plan-tag">Plano 1</span>
+                <h4>Plano Base</h4>
+                <div class="plan-icon">🛰️</div>
+              </div>
+              <p class="plan-summary">Mapeamento e diagnóstico macroscópico por satélite.</p>
+              <ul class="plan-features">
+                <li>Imagens de satélite multiespectrais em alta resolução</li>
+                <li>Cálculo de índices de vegetação (NDVI)</li>
+                <li>Identificação de áreas com déficit crítico de arborização</li>
+                <li>Relatório panorâmico municipal de cobertura verde</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Diagnóstico inicial</span>
+              </div>
+            </div>
+
+            <!-- Plano 2: Técnico -->
+            <div class="plan-card reveal" style="--delay: 0.1s">
+              <div class="plan-header">
+                <span class="plan-tag">Plano 2</span>
+                <h4>Plano Técnico</h4>
+                <div class="plan-icon">💻</div>
+              </div>
+              <p class="plan-summary">Área interativa onde técnicos e gestores mapeiam árvores por conta própria.</p>
+              <ul class="plan-features">
+                <li>Dashboard de gestão para prefeituras e secretarias</li>
+                <li>Ferramenta de cadastramento e geolocalização de árvores</li>
+                <li>Histórico de podas, adubações e manutenção fitossanitária</li>
+                <li>Classificação digital de espécies nativas e invasoras</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Secretarias e prefeituras</span>
+              </div>
+            </div>
+
+            <!-- Plano 3: Drones -->
+            <div class="plan-card featured-plan reveal" style="--delay: 0.2s">
+              <div class="plan-popular-tag">Alta Precisão</div>
+              <div class="plan-header">
+                <span class="plan-tag">Plano 3</span>
+                <h4>Plano Integrado a Drones</h4>
+                <div class="plan-icon">🚁</div>
+              </div>
+              <p class="plan-summary">Análise da cobertura vegetal e copas através de voos aéreos especializados.</p>
+              <ul class="plan-features">
+                <li>Voo automatizado com câmeras de alta definição</li>
+                <li>Modelagem 3D e ortomosaicos da vegetação urbana</li>
+                <li>Detecção precoce de pragas, galhos secos e risco de queda</li>
+                <li>Avaliação volumétrica do crescimento da copa arbórea</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Avenidas e corredores verdes</span>
+              </div>
+            </div>
+
+            <!-- Plano 4: Sensores -->
+            <div class="plan-card reveal" style="--delay: 0.3s">
+              <div class="plan-header">
+                <span class="plan-tag">Plano 4</span>
+                <h4>Plano Sensores IoT</h4>
+                <div class="plan-icon">📡</div>
+              </div>
+              <p class="plan-summary">Monitoramento contínuo em tempo real por telemetria e internet das coisas.</p>
+              <ul class="plan-features">
+                <li>Estações IoT com microcontrolador ESP32 em vias estratégicas</li>
+                <li>Leitura 24/7 de umidade do ar, solo e temperatura (DHT11/AHT25)</li>
+                <li>Alertas automáticos de estresse hídrico e risco fitossanitário</li>
+                <li>Integração futura com câmeras de visão computacional</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Monitoramento crítico 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diferencial & Públicos-Alvo -->
+        <div class="solution-details-grid">
+          <div class="differential-card reveal">
+            <div class="card-kicker">Diferencial Inovador</div>
+            <h3>O que torna a Arborização Inteligente única?</h3>
+            <p>
+              A <strong>Arborização Inteligente</strong> é a única plataforma que integra <strong>monitoramento em tempo real por sensores IoT</strong>, <strong>inteligência artificial preditiva</strong> e <strong>participação cidadã</strong> para transformar a gestão da arborização urbana em um processo preventivo, inteligente e fundamentado em evidências.
+            </p>
+            <div class="viability-note">
+              <strong>Viabilidade e Conformidade com os ODS:</strong>
+              <p>Resolve o impasse de secretarias de meio ambiente e prefeituras por relatórios técnicos precisos que respaldam tomadas de decisão, garantindo credibilidade pública e cumprimento das metas dos Objetivos de Desenvolvimento Sustentável (ODS).</p>
+            </div>
+          </div>
+
+          <div class="audience-card reveal">
+            <div class="card-kicker">Impacto Multissetorial</div>
+            <h3>Público-alvo e Beneficiários</h3>
+            <div class="audience-tags">
+              <span class="aud-tag">🏛️ Prefeituras e Secretarias Municipais</span>
+              <span class="aud-tag">👥 População Urbana e Bairros</span>
+              <span class="aud-tag">📐 Planejadores Urbanos e Engenheiros</span>
+              <span class="aud-tag">🏥 Setor de Saúde Pública (Qualidade do Ar)</span>
+              <span class="aud-tag">⚡ Setor Energético (Menos Quedas de Rede)</span>
+              <span class="aud-tag">🏫 Escolas e Universidades</span>
+              <span class="aud-tag">🌿 ONGs e Organizações Ambientais</span>
+              <span class="aud-tag">🛍️ Comerciantes e Vias Comerciais</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============================================================
+         3. SEÇÃO: QUEM SOMOS NÓS, METAS E OBJETIVOS (JM & Equipe)
+         ============================================================ -->
+    <section class="team-section" id="quem-somos">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Equipe, Metas & Objetivos
+          </p>
+          <h2>Quem Somos Nós, Metas e Objetivos</h2>
+          <p class="section-text">
+            Conheça o time de estudantes, pesquisadores e inovadores sergipanos dedicado a construir cidades sustentáveis e inteligentes.
+          </p>
+        </div>
+
+        <!-- Grid de Membros da Equipe -->
+        <div class="team-grid">
+          <!-- Membro 1: Julio Monteiro -->
+          <div class="team-card reveal">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/juliomonteiro.jpeg" alt="Foto de Julio Monteiro" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Julio Monteiro</h4>
+              <span class="member-role">Fundador & Liderança de Projeto</span>
+              <p class="member-desc">Coordenação geral, desenvolvimento tecnológico e visão estratégica de impacto urbano.</p>
+            </div>
+          </div>
+
+          <!-- Membro 2: Asafe -->
+          <div class="team-card reveal" style="--delay: 0.05s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/asafe.jpg" alt="Foto de Asafe" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Asafe</h4>
+              <span class="member-role">Engenharia de Hardware & IoT</span>
+              <p class="member-desc">Desenvolvimento dos circuitos com ESP32, calibração de sensores e conectividade de campo.</p>
+            </div>
+          </div>
+
+          <!-- Membro 3: Ellen -->
+          <div class="team-card reveal" style="--delay: 0.1s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/ellen.jpeg" alt="Foto de Ellen" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Ellen</h4>
+              <span class="member-role">Pesquisa Ambiental & Sustentabilidade</span>
+              <p class="member-desc">Levantamento fitossanitário, análise de biomas nativos e métricas de impacto ecológico.</p>
+            </div>
+          </div>
+
+          <!-- Membro 4: Evilyn -->
+          <div class="team-card reveal" style="--delay: 0.15s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/evilyn.png" alt="Foto de Evilyn" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Evilyn</h4>
+              <span class="member-role">Design & Comunicação</span>
+              <p class="member-desc">Identidade visual da startup, experiência do usuário e interface com a comunidade.</p>
+            </div>
+          </div>
+
+          <!-- Membro 5: Jônatas -->
+          <div class="team-card reveal" style="--delay: 0.2s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/jonatas.jpeg" alt="Foto de Jônatas" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Jônatas</h4>
+              <span class="member-role">Desenvolvimento de Software</span>
+              <p class="member-desc">Arquitetura de sistemas, dashboards para gestores e integração de dados de telemetria.</p>
+            </div>
+          </div>
+
+          <!-- Membro 6: Otávio -->
+          <div class="team-card reveal" style="--delay: 0.25s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/otavio.jpeg" alt="Foto de Otávio" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Otávio</h4>
+              <span class="member-role">Operações & Drones</span>
+              <p class="member-desc">Planejamento de voos, processamento de imagens aéreas e geoprocessamento urbano.</p>
+            </div>
+          </div>
+
+          <!-- Membro 7: Pedro Moisés -->
+          <div class="team-card reveal" style="--delay: 0.3s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/pedro.jpg" alt="Foto de Pedro Moisés" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Pedro Moisés</h4>
+              <span class="member-role">Ciência de Dados & IA</span>
+              <p class="member-desc">Modelos preditivos de fitossanidade e algoritmos para diferenciação de espécies.</p>
+            </div>
+          </div>
+
+          <!-- Membro 8: Vanessa -->
+          <div class="team-card reveal" style="--delay: 0.35s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/vanessa.jpg" alt="Foto de Vanessa" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Vanessa</h4>
+              <span class="member-role">Relações Institucionais & Parcerias</span>
+              <p class="member-desc">Articulação com prefeituras, escolas, ONGs e editais de fomento científico.</p>
+            </div>
+          </div>
+
+          <!-- Membro 9: Yan -->
+          <div class="team-card reveal" style="--delay: 0.4s">
+            <div class="member-photo-wrapper">
+              <img src="assets/membros/yan.jpeg" alt="Foto de Yan" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Yan</h4>
+              <span class="member-role">Pesquisa & Testes de Campo</span>
+              <p class="member-desc">Validação dos sensores em campo, coleta de amostras e apoio a eventos científicos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metas, Objetivos e ODS -->
+        <div class="goals-container reveal">
+          <div class="goals-header">
+            <h3>Metas, Objetivos e Compromisso com os ODS</h3>
+            <p>Trabalhamos orientados por indicadores claros de curto, médio e longo prazo:</p>
+          </div>
+
+          <div class="goals-grid">
+            <div class="goal-item">
+              <div class="goal-badge">Curto Prazo</div>
+              <h4>Pilotos & Validação em Sergipe</h4>
+              <p>Instalação de estações de sensores em vias críticas sergipanas, validação dos modelos preditivos e realização de oficinas educativas em escolas parceiras.</p>
+            </div>
+
+            <div class="goal-item">
+              <div class="goal-badge">Médio Prazo</div>
+              <h4>Expansão para Municípios do Nordeste</h4>
+              <p>Firmar termos de cooperação com prefeituras municipais, implantando o Plano Técnico e o monitoramento integrado com drones para suporte a decisões públicas.</p>
+            </div>
+
+            <div class="goal-item">
+              <div class="goal-badge">Longo Prazo</div>
+              <h4>Referência Nacional em Cidade Inteligente</h4>
+              <p>Consolidar a maior base de inteligência arbórea do Brasil, reduzindo em grande escala ilhas de calor e valorizando espécies nativas em cidades de todo o país.</p>
+            </div>
+          </div>
+
+          <!-- Selos ODS -->
+          <div class="ods-wrapper">
+            <span class="ods-label">Alinhamento Estratégico com os Objetivos de Desenvolvimento Sustentável (ONU):</span>
+            <div class="ods-badges-list">
+              <div class="ods-badge-card ods-11">
+                <span class="ods-number">ODS 11</span>
+                <strong>Cidades e Comunidades Sustentáveis</strong>
+                <p>Tornar as cidades e assentamentos inclusivos, seguros, resilientes e sustentáveis.</p>
+              </div>
+              <div class="ods-badge-card ods-13">
+                <span class="ods-number">ODS 13</span>
+                <strong>Ação Contra a Mudança Global do Clima</strong>
+                <p>Adotar medidas urgentes para combater a mudança climática e seus impactos locais.</p>
+              </div>
+              <div class="ods-badge-card ods-15">
+                <span class="ods-number">ODS 15</span>
+                <strong>Vida Terrestre</strong>
+                <p>Proteger, recuperar e promover o uso sustentável dos ecossistemas terrestres e flora nativa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. SEÇÃO: EVENTOS QUE PARTICIPAMOS (Destaques & Carrossel)
+         ============================================================ -->
+    <section class="events-section" id="eventos">
+      <div class="container">
+        <div class="events-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Reconhecimento & Participação
+          </p>
+          <h2>Eventos que Participamos</h2>
+          <p class="section-text">
+            Confira as principais feiras científicas, desafios de inovação, programas de aceleração e conferências onde a Arborização Inteligente foi destaque.
+          </p>
+        </div>
+
+        <!-- Carrossel de Eventos em Destaque -->
+        <div class="events-carousel-wrapper">
+          <button class="events-nav-btn prev" id="eventPrev" aria-label="Evento anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="events-carousel" id="eventsCarousel">
+            <!-- Evento 1: CIENART -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill past">Realizado</span>
+                  <img src="assets/eventos/cienart.jpg" alt="Equipe na CIENART" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Setembro 2025 • Aracaju, SE</span>
+                  <h3>CIENART 2025</h3>
+                  <p class="event-desc">
+                    Feira Científica de Sergipe que reúne pesquisadores e projetos inovadores de todo o estado. Apresentação da Arborização Inteligente como solução tecnológica pioneira para o clima e a sustentabilidade urbana.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🏆 Projeto Destaque</span>
+                    <span class="event-attendees-tag">500+ participantes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Evento 2: ROBOT-SE -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill past">Realizado</span>
+                  <img src="assets/eventos/robotse.jpg" alt="Equipe no ROBOT-SE" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Julho 2026 • Sergipe</span>
+                  <h3>ROBOT-SE</h3>
+                  <p class="event-desc">
+                    Maior competição de robótica e tecnologia STEM da região. Demonstração funcional do protótipo IoT com microcontrolador ESP32, sensores de temperatura, umidade e telemetria arbórea em tempo real.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🤖 Demonstração Prática</span>
+                    <span class="event-attendees-tag">300+ participantes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Evento 3: Sebrae Supernova -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill ongoing">Em andamento</span>
+                  <img src="assets/eventos/cienart-1.jpg" alt="Sebrae Supernova" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Temporada Atual • Aracaju, SE</span>
+                  <h3>Sebrae Supernova (1ª Temporada)</h3>
+                  <p class="event-desc">
+                    Programa de aceleração de startups do Sebrae. A Arborização Inteligente foi selecionada como uma das iniciativas de inovação ambiental e sustentabilidade mais promissoras do ecossistema de Sergipe.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🚀 Aceleração Sebrae</span>
+                    <span class="event-attendees-tag">Finalistas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Evento 4: Desafio Liga Jovem -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill ongoing">Em andamento</span>
+                  <img src="assets/eventos/robotse-1.jpg" alt="Desafio Liga Jovem" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Nacional • Brasil</span>
+                  <h3>Desafio Liga Jovem</h3>
+                  <p class="event-desc">
+                    Maior competição nacional de empreendedorismo jovem e soluções sustentáveis do Brasil. A Arborização Inteligente representa Sergipe com soluções que conectam dados e qualidade de vida nas cidades.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🇧🇷 Competidores Nacionais</span>
+                    <span class="event-attendees-tag">Etapa Nacional</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Evento 5: Sergipe OIL e Gás -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill upcoming">Próximo</span>
+                  <img src="assets/eventos/robotse-2.jpg" alt="Sergipe OIL e Gás" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Julho 2026 • Aracaju, SE</span>
+                  <h3>Sergipe OIL e Gás</h3>
+                  <p class="event-desc">
+                    Conferência e feira executiva de energia e grandes indústrias. Apresentação da plataforma como ferramenta de responsabilidade socioambiental corporativa (ESG) e mitigação de emissões de carbono.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">⚡ Foco ESG & Indústria</span>
+                    <span class="event-attendees-tag">800+ esperados</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Evento 6: Mini COP 30 Sergipe -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill past">Realizado</span>
+                  <img src="assets/eventos/mini-cop.jpg" alt="Mini COP 30 Sergipe" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Agosto 2025 • Aracaju, SE</span>
+                  <h3>Mini COP 30 Sergipe</h3>
+                  <p class="event-desc">
+                    Conferência preparatória sobre mudanças climáticas e adaptação sustentável. Apresentação do projeto como referência em uso de tecnologia para preservação da vida e combate às ilhas de calor.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🌍 Adaptação Climática</span>
+                    <span class="event-attendees-tag">500+ participantes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="events-nav-btn next" id="eventNext" aria-label="Próximo evento">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Indicadores do Carrossel de Eventos -->
+        <div class="events-carousel-indicators" id="eventsIndicators">
+          <!-- Gerados dinamicamente via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. SEÇÃO: BLOG & NOTÍCIAS DO PROJETO
+         ============================================================ -->
     <section class="news-section blog-section" id="noticias">
       <div class="container">
         <div class="news-header blog-header">
-          <p class="eyebrow eyebrow-dark">Atualizações e Artigos</p>
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Atualizações e Artigos
+          </p>
           <h2>Blog & Notícias do Projeto</h2>
-          <p class="section-text">Acompanhe as novidades, avanços tecnológicos, descobertas de campo e marcos do projeto Arborização Inteligente</p>
+          <p class="section-text">
+            Acompanhe as publicações mais recentes, artigos técnicos, pesquisas de campo e marcos da Arborização Inteligente.
+          </p>
         </div>
 
         <!-- Barra de Busca e Categorias do Blog -->
@@ -220,247 +779,106 @@
       </div>
     </section>
 
-    <!-- EVENTOS SECTION -->
-    <section class="events-section" id="eventos">
+    <!-- ============================================================
+         6. SEÇÃO: CONTATO
+         ============================================================ -->
+    <section class="contact-section" id="contato">
       <div class="container">
-        <div class="events-header">
-          <p class="eyebrow eyebrow-dark">Engajamento comunitário</p>
-          <h2>Eventos que participamos</h2>
-          <p class="section-text">Confira os eventos, conferências e iniciativas comunitárias onde apresentamos a Arborização Inteligente</p>
+        <div class="section-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Canais Oficiais
+          </p>
+          <h2>Entre em Contato Conosco</h2>
+          <p class="section-text">
+            Tem interesse em implementar a Arborização Inteligente na sua cidade, escola ou projeto? Fale diretamente com nossa equipe!
+          </p>
         </div>
 
-        <div class="events-grid">
-          <!-- Evento 1: CIENART -->
-          <div class="event-card reveal" style="--delay: 0.1s">
-            <div class="event-image">
-              <img src="material_site_arborizacao_inteligente/IMG_20251003_163210.jpg" alt="CIENART 2024 - Feira Científica de Sergipe" />
-            </div>
-            <div class="event-header">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+        <div class="contact-wrapper">
+          <!-- Informações de Contato -->
+          <div class="contact-cards-column">
+            <div class="contact-card-box">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
                 </svg>
               </div>
-              <span class="event-status past">Realizado</span>
-            </div>
-            <div class="event-content">
-              <h3>CIENART 2025</h3>
-              <p class="event-desc">Feira Científica de Sergipe que reúne pesquisadores, educadores e inovadores. Apresentação de Arborização Inteligente como projeto de tecnologia e sustentabilidade reconhecido regionalmente.</p>
-              <div class="event-meta">
-                <span class="event-date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  Setembro 2025
-                </span>
-                <span class="event-location">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  Aracaju, SE
-                </span>
+              <div class="contact-card-body">
+                <strong>E-mail Oficial</strong>
+                <a href="mailto:arborizacaointeligente1@gmail.com" class="contact-link-direct">arborizacaointeligente1@gmail.com</a>
+                <p>Para propostas, parcerias municipais, convênios acadêmicos e dúvidas.</p>
               </div>
             </div>
-            <div class="event-footer">
-              <span class="event-attendees">500+ participantes</span>
+
+            <div class="contact-card-box">
+              <div class="contact-card-icon instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <div class="contact-card-body">
+                <strong>Instagram</strong>
+                <a href="https://instagram.com/arborizaccao_inteligente" target="_blank" rel="noopener noreferrer" class="contact-link-direct">@arborizaccao_inteligente</a>
+                <p>Acompanhe registros das ações em campo, novidades e eventos ao vivo.</p>
+              </div>
+            </div>
+
+            <div class="contact-card-box">
+              <div class="contact-card-icon location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-card-body">
+                <strong>Origem & Localização</strong>
+                <span class="contact-plain-text">Aracaju, Sergipe — Brasil</span>
+                <p>Nascido em Sergipe com atuação planejada para todo o Nordeste e Brasil.</p>
+              </div>
             </div>
           </div>
 
-          <!-- Evento 2: ROBOT-SE -->
-          <div class="event-card reveal" style="--delay: 0.2s">
-            <div class="event-image">
-              <img src="material_site_arborizacao_inteligente/SAVE_20260704_242124.jpg" alt="ROBOT-SE 2024 - Competição de Robótica" />
-            </div>
-            <div class="event-header">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v20M2 12h20M6 6l12 12M18 6L6 18"></path>
-                </svg>
-              </div>
-              <span class="event-status past">Realizado</span>
-            </div>
-            <div class="event-content">
-              <h3>ROBOT-SE</h3>
-              <p class="event-desc">Competição de robótica e educação STEM. Demonstração de tecnologias de IoT e sensoriamento ambiental integradas ao projeto de monitoramento arbóreo inteligente.</p>
-              <div class="event-meta">
-                <span class="event-date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  Julho 2026
-                </span>
-                <span class="event-location">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  Sergipe
-                </span>
-              </div>
-            </div>
-            <div class="event-footer">
-              <span class="event-attendees">300+ participantes</span>
-            </div>
-          </div>
+          <!-- Formulário de Mensagem Direta -->
+          <div class="contact-form-column">
+            <form class="contact-form" id="contactForm">
+              <h3>Envie uma mensagem</h3>
+              <p class="form-desc">Preencha os campos abaixo e entraremos em contato rapidamente.</p>
 
-          <!-- Evento 3: Sebrae Supernova -->
-          <div class="event-card reveal" style="--delay: 0.3s">
-            <div class="event-image">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=350&fit=crop" alt="Sebrae Supernova 1ª Temporada" />
-            </div>
-            <div class="event-header">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                  <polyline points="13 2 13 9 20 9"></polyline>
-                </svg>
+              <div class="form-group">
+                <label for="formName">Seu Nome / Organização *</label>
+                <input type="text" id="formName" name="name" placeholder="Ex: Maria Silva ou Prefeitura de..." required />
               </div>
-              <span class="event-status upcoming">Em andamento</span>
-            </div>
-            <div class="event-content">
-              <h3>Sebrae Supernova 1ª Temporada</h3>
-              <p class="event-desc">Programa de aceleração de startups do Sebrae. Arborização Inteligente está participando como uma das startups de tecnologia e inovação ambiental mais promissoras da região.</p>
-              <div class="event-meta">
-                <span class="event-date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  Em andamento
-                </span>
-                <span class="event-location">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  Aracaju, SE
-                </span>
-              </div>
-            </div>
-            <div class="event-footer">
-              <span class="event-attendees">Finalistas em competição</span>
-            </div>
-          </div>
 
-          <!-- Evento 4: Desafio Liga Jovem -->
-          <div class="event-card reveal" style="--delay: 0.4s">
-            <div class="event-image">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=350&fit=crop" alt="Desafio Liga Jovem - Competição de Empreendedorismo" />
-            </div>
-            <div class="event-header">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
+              <div class="form-group">
+                <label for="formEmail">Seu E-mail de Contato *</label>
+                <input type="email" id="formEmail" name="email" placeholder="seuemail@exemplo.com" required />
               </div>
-              <span class="event-status upcoming">Em andamento</span>
-            </div>
-            <div class="event-content">
-              <h3>Desafio Liga Jovem</h3>
-              <p class="event-desc">Competição do Sebrae para jovens empreendedores. Arborização Inteligente está participando ativamente, apresentando soluções inovadoras em tecnologia e sustentabilidade para o Brasil.</p>
-              <div class="event-meta">
-                <span class="event-date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  Em andamento
-                </span>
-                <span class="event-location">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  Brasil
-                </span>
-              </div>
-            </div>
-            <div class="event-footer">
-              <span class="event-attendees">Competidores nacionais</span>
-            </div>
-          </div>
 
-          <!-- Evento 5: Sergipe OIL e Gás -->
-          <div class="event-card reveal" style="--delay: 0.5s">
-            <div class="event-header">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                  <path d="M12.5 7H11v6l5.25 3.15"></path>
-                </svg>
+              <div class="form-group">
+                <label for="formInterest">Tipo de Interesse</label>
+                <select id="formInterest" name="interest">
+                  <option value="gestao-publica">Gestão Pública / Prefeitura / Secretaria</option>
+                  <option value="escola-universidade">Instituição de Ensino / Palestra</option>
+                  <option value="parceria-ong">Parceria / ONG Ambiental</option>
+                  <option value="comunidade">Cidadão / Dúvidas sobre o Projeto</option>
+                  <option value="outro">Outro assunto</option>
+                </select>
               </div>
-              <span class="event-status upcoming">Próximo</span>
-            </div>
-            <div class="event-content">
-              <h3>Sergipe OIL e Gás</h3>
-              <p class="event-desc">Expo e conferência sobre setor de petróleo, gás e energias. Apresentação da Arborização Inteligente como solução de sustentabilidade e responsabilidade ambiental corporativa para grandes indústrias.</p>
-              <div class="event-meta">
-                <span class="event-date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  Julho 2026
-                </span>
-                <span class="event-location">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  Aracaju, SE
-                </span>
-              </div>
-            </div>
-            <div class="event-footer">
-              <span class="event-attendees">800+ esperados</span>
-            </div>
-          </div>
 
-          <!-- Evento 6: Mini COP 30 Sergipe -->
-          <div class="event-card reveal" style="--delay: 0.6s">
-            <div class="event-image">
-              <img src="material_site_arborizacao_inteligente/IMG_2799.jpg" alt="Mini COP 30 Sergipe - Conferência sobre Clima" />
-            </div>
-            <div class="event-header">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
-                  <path d="M21 3v5h-5"></path>
-                  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
-                  <path d="M3 21v-5h5"></path>
-                </svg>
+              <div class="form-group">
+                <label for="formMessage">Mensagem *</label>
+                <textarea id="formMessage" name="message" rows="4" placeholder="Descreva brevemente sua necessidade ou dúvida..." required></textarea>
               </div>
-              <span class="event-status past">Realizado</span>
-            </div>
-            <div class="event-content">
-              <h3>Mini COP 30 Sergipe</h3>
-              <p class="event-desc">Conferência temática sobre mudanças climáticas e ações sustentáveis. Participação da Arborização Inteligente como exemplo de inovação tecnológica voltada para a preservação ambiental e adaptação climática.</p>
-              <div class="event-meta">
-                <span class="event-date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  Agosto 2025
-                </span>
-                <span class="event-location">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  Aracaju, SE
-                </span>
-              </div>
-            </div>
-            <div class="event-footer">
-              <span class="event-attendees">500+ participantes</span>
-            </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>Enviar Mensagem</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -521,9 +939,70 @@
       </div>
     </div>
 
-    <!-- Notificação Toast de Sucesso (Copiar Link) -->
+    <!-- Notificação Toast de Sucesso (Copiar Link / Envio de Form) -->
     <div id="blogToast" class="blog-toast" role="status" aria-live="polite"></div>
   </main>
+
+  <!-- ============================================================
+       7. FOOTER (Copy, Instagram, E-mail, ODS)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <img class="brand-logo" src="assets/logo.png" alt="Logo Arborização Inteligente" />
+          <span class="brand-text">
+            <strong>Arborização Inteligente</strong>
+            <small>Tecnologia e dados para cidades sustentáveis</small>
+          </span>
+        </a>
+        <p class="footer-tagline">
+          "Uma cidade inteligente é aquela que usa tecnologia para preservar a vida."
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#arborizacao">Arborização Urbana</a></li>
+          <li><a href="#solucao">Nossa Solução & Planos</a></li>
+          <li><a href="#quem-somos">Quem Somos & Metas</a></li>
+          <li><a href="#eventos">Eventos que Participamos</a></li>
+          <li><a href="#noticias">Blog do Projeto</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-group">
+        <h4>Contato Oficial</h4>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:arborizacaointeligente1@gmail.com">arborizacaointeligente1@gmail.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="https://instagram.com/arborizaccao_inteligente" target="_blank" rel="noopener noreferrer">@arborizaccao_inteligente</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Aracaju, Sergipe — Brasil</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="copy-text">
+        &copy; 2026 Arborização Inteligente. Todos os direitos reservados.
+      </p>
+      <div class="footer-bottom-badges">
+        <span>ODS 11 • Cidades Sustentáveis</span>
+        <span>ODS 13 • Ação Climática</span>
+        <span>ODS 15 • Vida Terrestre</span>
+      </div>
+    </div>
+  </footer>
 
   <script src="news-data.js"></script>
   <script src="script.js"></script>

@@ -7,6 +7,13 @@ menuToggle?.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
+mainNav?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mainNav?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+  });
+});
+
 window.addEventListener('scroll', () => {
   topbar.classList.toggle('scrolled', window.scrollY > 12);
 });
@@ -438,7 +445,218 @@ class BlogManager {
   }
 }
 
-// Inicializa o Blog quando o DOM estiver pronto
+/* ============================================================
+   CARROSSEL DE EVENTOS (Destaques & Passagem Automática)
+   ============================================================ */
+
+class EventsCarousel {
+  constructor() {
+    this.carousel = document.getElementById('eventsCarousel');
+    this.prevBtn = document.getElementById('eventPrev');
+    this.nextBtn = document.getElementById('eventNext');
+    this.indicatorsContainer = document.getElementById('eventsIndicators');
+    this.slides = this.carousel
+      ? Array.from(this.carousel.querySelectorAll('.event-slide'))
+      : [];
+    this.currentIndex = 0;
+    this.autoPlayInterval = null;
+    this.autoPlayDelay = 4500; // 4.5 segundos por slide
+
+    if (this.carousel && this.slides.length > 0) {
+      this.init();
+    }
+  }
+
+  init() {
+    this.createIndicators();
+    this.bindEvents();
+    this.startAutoPlay();
+    this.updateActiveState(0);
+  }
+
+  createIndicators() {
+    if (!this.indicatorsContainer) return;
+    this.indicatorsContainer.innerHTML = '';
+    this.indicators = this.slides.map((_, idx) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `event-indicator${idx === 0 ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Ir para evento ${idx + 1}`);
+      dot.dataset.index = String(idx);
+      dot.addEventListener('click', () => {
+        this.goToSlide(idx);
+        this.restartAutoPlay();
+      });
+      this.indicatorsContainer.appendChild(dot);
+      return dot;
+    });
+  }
+
+  bindEvents() {
+    this.prevBtn?.addEventListener('click', () => {
+      this.prev();
+      this.restartAutoPlay();
+    });
+
+    this.nextBtn?.addEventListener('click', () => {
+      this.next();
+      this.restartAutoPlay();
+    });
+
+    // Pausar autoplay durante interação do usuário
+    const carouselWrapper =
+      this.carousel.closest('.events-carousel-wrapper') || this.carousel;
+    carouselWrapper.addEventListener('mouseenter', () => this.pauseAutoPlay());
+    carouselWrapper.addEventListener('mouseleave', () => this.startAutoPlay());
+    carouselWrapper.addEventListener(
+      'touchstart',
+      () => this.pauseAutoPlay(),
+      { passive: true },
+    );
+    carouselWrapper.addEventListener('touchend', () => this.startAutoPlay(), {
+      passive: true,
+    });
+
+    // Sincronizar indicadores com scroll manual
+    let scrollTimeout;
+    this.carousel.addEventListener(
+      'scroll',
+      () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          this.syncIndexFromScroll();
+        }, 80);
+      },
+      { passive: true },
+    );
+
+    // Navegação por teclado
+    this.carousel.setAttribute('tabindex', '0');
+    this.carousel.setAttribute('role', 'region');
+    this.carousel.setAttribute('aria-label', 'Carrossel de eventos');
+    this.carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        this.prev();
+        this.restartAutoPlay();
+      } else if (e.key === 'ArrowRight') {
+        this.next();
+        this.restartAutoPlay();
+      }
+    });
+  }
+
+  syncIndexFromScroll() {
+    if (!this.carousel || !this.slides.length) return;
+    const scrollLeft = this.carousel.scrollLeft;
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    this.slides.forEach((slide, idx) => {
+      const distance = Math.abs(
+        slide.offsetLeft - this.carousel.offsetLeft - scrollLeft,
+      );
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = idx;
+      }
+    });
+
+    if (closestIndex !== this.currentIndex) {
+      this.currentIndex = closestIndex;
+      this.updateActiveState(this.currentIndex);
+    }
+  }
+
+  goToSlide(index) {
+    if (index < 0) index = this.slides.length - 1;
+    if (index >= this.slides.length) index = 0;
+    this.currentIndex = index;
+
+    const targetSlide = this.slides[index];
+    if (targetSlide) {
+      const targetLeft = targetSlide.offsetLeft - this.carousel.offsetLeft;
+      this.carousel.scrollTo({
+        left: targetLeft,
+        behavior: 'smooth',
+      });
+    }
+
+    this.updateActiveState(index);
+  }
+
+  next() {
+    const nextIdx = (this.currentIndex + 1) % this.slides.length;
+    this.goToSlide(nextIdx);
+  }
+
+  prev() {
+    const prevIdx =
+      (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.goToSlide(prevIdx);
+  }
+
+  updateActiveState(index) {
+    if (this.indicators) {
+      this.indicators.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === index);
+        dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
+      });
+    }
+  }
+
+  startAutoPlay() {
+    this.pauseAutoPlay();
+    this.autoPlayInterval = setInterval(() => {
+      this.next();
+    }, this.autoPlayDelay);
+  }
+
+  pauseAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+
+  restartAutoPlay() {
+    this.pauseAutoPlay();
+    this.startAutoPlay();
+  }
+}
+
+/* ============================================================
+   FORMULÁRIO DE CONTATO (Feedback Interativo)
+   ============================================================ */
+
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const toast = document.getElementById('blogToast');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('formName');
+    const senderName = nameInput ? nameInput.value.trim() : 'Obrigado';
+
+    if (toast) {
+      toast.textContent = `✓ Mensagem recebida, ${senderName}! Entraremos em contato com você pelo e-mail informado.`;
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4500);
+    }
+
+    form.reset();
+  });
+}
+
+// Inicializa todos os módulos quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
   new BlogManager();
+  new EventsCarousel();
+  initContactForm();
 });
+
