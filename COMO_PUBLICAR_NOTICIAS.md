@@ -22,7 +22,7 @@ Tudo é gerenciado no arquivo:
     date: "25 de Setembro, 2024",                // Data de publicação
     readTime: "3 min de leitura",                // Tempo estimado de leitura
     author: "Equipe Arbo Inteligente",           // Nome do autor ou comitê
-    image: "assets/salvando-a-terra.png",         // Caminho da imagem de capa
+    image: "assets/logo.png",         // Caminho da imagem de capa
     featured: false,                             // true se quiser que seja o Destaque principal
     excerpt: "Resumo breve da notícia que vai aparecer no card inicial...",
     content: `

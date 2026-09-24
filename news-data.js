@@ -14,7 +14,7 @@
  * - date: Data da publicação (ex: "20 de Setembro, 2024")
  * - readTime: Estimativa de leitura (ex: "3 min de leitura")
  * - author: Nome do autor ou equipe (ex: "Equipe Arbo", "Laboratório de IA")
- * - image: Caminho da imagem (ex: "assets/salvando-a-terra.png" ou URL externa)
+ * - image: Caminho da imagem (ex: "assets/logo.png" ou URL externa)
  * - featured: true se for o destaque principal, false se for post padrão
  * - excerpt: Resumo curto para o card (máx. 2 a 3 frases)
  * - content: Conteúdo completo em HTML (parágrafos, subtítulos, listas, citações)
@@ -29,7 +29,7 @@ const BLOG_POSTS = [
     date: "15 de Agosto, 2024",
     readTime: "4 min de leitura",
     author: "Equipe de Engenharia & Software",
-    image: "assets/salvando-a-terra.png",
+    image: "assets/logo.png",
     featured: true,
     excerpt: "Lançamos a versão 2.0 da nossa plataforma com dashboards avançados, integração com sensores IoT em tempo real e algoritmos preditivos para a saúde das árvores urbanas.",
     content: `
@@ -88,7 +88,7 @@ const BLOG_POSTS = [
     date: "01 de Agosto, 2024",
     readTime: "5 min de leitura",
     author: "Laboratório de Ciência de Dados",
-    image: "assets/salvando-a-terra.png",
+    image: "assets/logo.png",
     featured: false,
     excerpt: "Implementação de modelos de machine learning que predizem com até 90 dias de antecedência a necessidade de poda, adubação e prevenção contra infestações.",
     content: `
@@ -141,7 +141,7 @@ const BLOG_POSTS = [
     date: "18 de Julho, 2024",
     readTime: "4 min de leitura",
     author: "Comitê Científico do Projeto",
-    image: "assets/salvando-a-terra.png",
+    image: "assets/logo.png",
     featured: false,
     excerpt: "Dados mostram aumento de 40% na cobertura arbórea das áreas monitoradas e redução média de 2,3°C na temperatura ambiente nos microclimas mapeados.",
     content: `
