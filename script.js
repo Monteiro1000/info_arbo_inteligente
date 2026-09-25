@@ -1,265 +1,662 @@
-const menuToggle = document.getElementById("menu-toggle");
-const mainNav = document.getElementById("main-nav");
-const topbar = document.getElementById("topbar");
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+const topbar = document.getElementById('topbar');
 
-menuToggle?.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
+menuToggle?.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
-window.addEventListener("scroll", () => {
-  topbar.classList.toggle("scrolled", window.scrollY > 12);
-});
-
-const revealEls = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver((entries, obs) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      obs.unobserve(entry.target);
-    }
+mainNav?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mainNav?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
   });
-}, { threshold: 0.2 });
+});
+
+window.addEventListener('scroll', () => {
+  topbar.classList.toggle('scrolled', window.scrollY > 12);
+});
+
+const revealEls = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 },
+);
 
 revealEls.forEach((el) => revealObserver.observe(el));
 
-/* ---------- CAROUSEL ---------- */
+/* ---------- BLOG MANAGER ---------- */
 
-class NewsCarousel {
+class BlogManager {
   constructor() {
-    this.carousel = document.getElementById("newsCarousel");
-    this.prevBtn = document.getElementById("carouselPrev");
-    this.nextBtn = document.getElementById("carouselNext");
-    this.indicators = document.querySelectorAll(".indicator");
-    this.cards = document.querySelectorAll(".news-card");
-    
-    if (!this.carousel || !this.prevBtn || !this.nextBtn) return;
-    
-    this.currentIndex = 0;
-    this.cardWidth = this.cards[0]?.offsetWidth || 0;
-    this.gap = 16; // 1.6rem em pixels
-    this.autoScrollInterval = null;
-    
+    this.posts =
+      typeof BLOG_POSTS !== 'undefined' && Array.isArray(BLOG_POSTS)
+        ? BLOG_POSTS
+        : [];
+    this.activeCategory = 'all';
+    this.searchQuery = '';
+    this.currentModalPost = null;
+
+    // Elementos da interface
+    this.featuredContainer = document.getElementById('blogFeatured');
+    this.featuredWrapper = document.getElementById('blogFeaturedWrapper');
+    this.gridContainer = document.getElementById('blogGrid');
+    this.counterEl = document.getElementById('blogCounter');
+    this.emptyEl = document.getElementById('blogEmpty');
+    this.searchInput = document.getElementById('blogSearchInput');
+    this.searchClearBtn = document.getElementById('blogSearchClear');
+    this.categoryBtns = document.querySelectorAll('.category-btn');
+    this.resetBtn = document.getElementById('blogResetBtn');
+
+    // Elementos do Modal
+    this.modal = document.getElementById('newsModal');
+    this.modalOverlay = document.getElementById('modalOverlay');
+    this.modalClose = document.getElementById('modalClose');
+    this.modalCloseBtn = document.getElementById('modalCloseBtn');
+    this.modalShareBtn = document.getElementById('modalShareBtn');
+    this.toast = document.getElementById('blogToast');
+
     this.init();
   }
-  
+
   init() {
-    this.prevBtn.addEventListener("click", () => this.scroll(-1));
-    this.nextBtn.addEventListener("click", () => this.scroll(1));
-    
-    this.indicators.forEach((indicator) => {
-      indicator.addEventListener("click", (e) => {
-        const index = parseInt(e.target.dataset.index);
-        this.goToSlide(index);
-      });
-    });
-    
-    // Recalculate on resize
-    window.addEventListener("resize", () => {
-      this.cardWidth = this.cards[0]?.offsetWidth || 0;
-    });
-    
-    this.updateCarousel();
-  }
-  
-  scroll(direction) {
-    const cardsPerView = this.getCardsPerView();
-    this.currentIndex = (this.currentIndex + direction + this.cards.length) % this.cards.length;
-    this.updateCarousel();
-  }
-  
-  goToSlide(index) {
-    this.currentIndex = index;
-    this.updateCarousel();
-  }
-  
-  getCardsPerView() {
-    const width = window.innerWidth;
-    if (width >= 1200) return 4;
-    if (width >= 900) return 2;
-    return 1;
-  }
-  
-  updateCarousel() {
-    const scrollDistance = this.currentIndex * (this.cardWidth + this.gap);
-    this.carousel.scrollLeft = scrollDistance;
-    
-    // Update indicators
-    this.indicators.forEach((indicator, index) => {
-      const isCurrent = index === this.currentIndex;
-      indicator.setAttribute("aria-current", String(isCurrent));
-    });
-  }
-}
+    if (!this.gridContainer) return;
 
-// Initialize carousel when DOM is ready
-document.addEventListener("DOMContentLoaded", () => {
-  new NewsCarousel();
-  new NewsModal();
-});
+    this.bindEvents();
+    this.render();
+    this.checkUrlHash();
+  }
 
-/* ---------- NEWS MODAL ---------- */
-
-class NewsModal {
-  constructor() {
-    this.modal = document.getElementById("newsModal");
-    this.modalOverlay = document.getElementById("modalOverlay");
-    this.modalClose = document.getElementById("modalClose");
-    this.modalCloseBtn = document.getElementById("modalCloseBtn");
-    this.openLinks = document.querySelectorAll(".open-modal");
-    
-    if (!this.modal) return;
-    
-    this.newsData = [
-      {
-        badge: "Tecnologia",
-        image: "assets/salvando-a-terra.png",
-        date: "15 de Agosto, 2024",
-        title: "Nova plataforma de monitoramento em tempo real",
-        description: "Lançamos a versão 2.0 com dashboards avançados e integrações com IoT para coleta de dados mais precisa sobre a saúde das árvores urbanas.",
-        content: `
-          <p>A Arborização Inteligente apresenta sua plataforma mais avançada até o momento, desenvolvida com tecnologias de ponta para oferecer monitoramento em tempo real.</p>
-          
-          <h3 style="color: #02183f; margin: 1.5rem 0 0.8rem; font-weight: 700;">Principais Funcionalidades:</h3>
-          <ul>
-            <li>Dashboards interativos com visualização de dados em tempo real</li>
-            <li>Integração com sensores IoT para coleta automática de dados</li>
-            <li>Análise preditiva com IA para saúde das árvores</li>
-            <li>Relatórios personalizáveis e exportáveis</li>
-            <li>API aberta para integrações com terceiros</li>
-          </ul>
-          
-          <p>Com essa nova versão, gestores públicos e cidadãos terão acesso a informações mais precisas e atualizadas, permitindo tomadas de decisão mais eficientes.</p>
-        `
-      },
-      {
-        badge: "Sustentabilidade",
-        image: "material_site_arborizacao_inteligente/SAVE_20251003_225236.jpg",
-        date: "08 de Agosto, 2024",
-        title: "Expansão do projeto para cidades do Nordeste",
-        description: "A Arborização Inteligente chega em mais 5 municípios, consolidando nossa missão de promover cidades mais verdes e saudáveis em toda a região.",
-        content: `
-          <p>Com grande satisfação, anunciamos a expansão do projeto Arborização Inteligente para mais 5 municípios do Nordeste, reforçando nosso compromisso com a sustentabilidade regional.</p>
-          
-          <h3 style="color: #02183f; margin: 1.5rem 0 0.8rem; font-weight: 700;">Cidades Beneficiadas:</h3>
-          <ul>
-            <li>Aracaju - SE</li>
-            <li>Maceió - AL</li>
-            <li>Recife - PE</li>
-            <li>Fortaleza - CE</li>
-            <li>Natal - RN</li>
-          </ul>
-          
-          <p>Cada município contará com equipes especializadas e infraestrutura completa para implementação do sistema de monitoramento arbóreo.</p>
-        `
-      },
-      {
-        badge: "Inovação",
-        image: "assets/salvando-a-terra.png",
-        date: "01 de Agosto, 2024",
-        title: "IA para análise predictiva de saúde arbórea",
-        description: "Implementação de modelos de machine learning que predizem a necessidade de manutenção e intervenções preventivas nas árvores urbanas.",
-        content: `
-          <p>Desenvolvemos algoritmos avançados de inteligência artificial que analisam múltiplos fatores para prever problemas de saúde em árvores urbanas.</p>
-          
-          <h3 style="color: #02183f; margin: 1.5rem 0 0.8rem; font-weight: 700;">Tecnologias Utilizadas:</h3>
-          <ul>
-            <li>Machine Learning com redes neurais profundas</li>
-            <li>Análise de imagens via computer vision</li>
-            <li>Processamento de dados geoespaciais</li>
-            <li>Modelos preditivos de fatores climáticos</li>
-          </ul>
-          
-          <p>Essa inovação permite identificar doenças, pragas e deficiências nutricionais com até 3 meses de antecedência, possibilitando intervenções preventivas.</p>
-        `
-      },
-      {
-        badge: "Comunidade",
-        image: "material_site_arborizacao_inteligente/SAVE_20251003_225236.jpg",
-        date: "25 de Julho, 2024",
-        title: "Aplicativo mobile disponível para download",
-        description: "Cidadãos agora podem participar ativamente do projeto reportando problemas e acompanhando iniciativas de arborização em suas comunidades.",
-        content: `
-          <p>O aplicativo mobile Arborização Inteligente está disponível para iOS e Android, democratizando o acesso aos dados e permitindo participação comunitária.</p>
-          
-          <h3 style="color: #02183f; margin: 1.5rem 0 0.8rem; font-weight: 700;">Recursos do App:</h3>
-          <ul>
-            <li>Mapa interativo de árvores monitoradas</li>
-            <li>Sistema de denúncias de problemas arbóreos</li>
-            <li>Histórico de manutenções e intervenções</li>
-            <li>Educação ambiental com conteúdos interativos</li>
-            <li>Gamificação com pontos e conquistas</li>
-          </ul>
-          
-          <p>Download agora em Apple App Store e Google Play Store!</p>
-        `
-      },
-      {
-        badge: "Pesquisa",
-        image: "assets/salvando-a-terra.png",
-        date: "18 de Julho, 2024",
-        title: "Relatório: impacto positivo em 3 anos",
-        description: "Dados mostram aumento de 40% na cobertura arbórea nas cidades monitoradas e melhoria significativa na qualidade do ar e temperatura ambiente.",
-        content: `
-          <p>Após 3 anos de implementação da Arborização Inteligente, os resultados são surpreendentes e reforçam a importância do monitoramento ambiental eficiente.</p>
-          
-          <h3 style="color: #02183f; margin: 1.5rem 0 0.8rem; font-weight: 700;">Resultados Alcançados:</h3>
-          <ul>
-            <li><strong>+40%</strong> de aumento na cobertura arbórea nas cidades monitoradas</li>
-            <li><strong>-2.3°C</strong> de redução na temperatura média em áreas verdes</li>
-            <li><strong>15%</strong> de melhoria na qualidade do ar (redução de poluentes)</li>
-            <li><strong>2.5M</strong> de árvores monitoradas continuamente</li>
-            <li><strong>85%</strong> de aprovação comunitária do projeto</li>
-          </ul>
-          
-          <p>O relatório completo está disponível em nosso site com análises detalhadas, metodologia e projeções futuras.</p>
-        `
+  bindEvents() {
+    // Busca em tempo real
+    this.searchInput?.addEventListener('input', (e) => {
+      this.searchQuery = e.target.value.trim().toLowerCase();
+      if (this.searchClearBtn) {
+        this.searchClearBtn.style.display = this.searchQuery ? 'block' : 'none';
       }
-    ];
-    
-    this.init();
-  }
-  
-  init() {
-    this.openLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const newsIndex = parseInt(link.dataset.news);
-        this.openModal(newsIndex);
+      this.render();
+    });
+
+    // Limpar busca
+    this.searchClearBtn?.addEventListener('click', () => {
+      if (this.searchInput) {
+        this.searchInput.value = '';
+        this.searchQuery = '';
+        this.searchClearBtn.style.display = 'none';
+        this.searchInput.focus();
+        this.render();
+      }
+    });
+
+    // Botões de categorias
+    this.categoryBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        this.categoryBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        this.activeCategory = btn.dataset.category || 'all';
+        this.render();
       });
     });
-    
-    this.modalClose?.addEventListener("click", () => this.closeModal());
-    this.modalCloseBtn?.addEventListener("click", () => this.closeModal());
-    this.modalOverlay?.addEventListener("click", () => this.closeModal());
-    
-    // Close on ESC key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && this.modal.classList.contains("active")) {
+
+    // Botão reset no empty state
+    this.resetBtn?.addEventListener('click', () => {
+      this.resetFilters();
+    });
+
+    // Fechar Modal
+    this.modalClose?.addEventListener('click', () => this.closeModal());
+    this.modalCloseBtn?.addEventListener('click', () => this.closeModal());
+    this.modalOverlay?.addEventListener('click', () => this.closeModal());
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.modal?.classList.contains('active')) {
         this.closeModal();
       }
     });
+
+    // Compartilhar notícia
+    this.modalShareBtn?.addEventListener('click', () => {
+      this.shareCurrentPost();
+    });
+
+    // Delegação de cliques para abrir artigos (destaque e grid)
+    document.addEventListener('click', (e) => {
+      const openBtn = e.target.closest('.open-blog-post');
+      if (openBtn) {
+        e.preventDefault();
+        const postId = openBtn.dataset.postId;
+        this.openArticleModal(postId);
+      }
+    });
   }
-  
-  openModal(index) {
-    const news = this.newsData[index];
-    if (!news) return;
-    
-    document.getElementById("modalBadge").textContent = news.badge;
-    document.getElementById("modalImage").src = news.image;
-    document.getElementById("modalImage").alt = news.title;
-    document.getElementById("modalDate").textContent = news.date;
-    document.getElementById("modalTitle").textContent = news.title;
-    document.getElementById("modalDescription").textContent = news.description;
-    document.getElementById("modalContent").innerHTML = news.content;
-    
-    this.modal.classList.add("active");
-    document.body.style.overflow = "hidden";
+
+  resetFilters() {
+    this.activeCategory = 'all';
+    this.searchQuery = '';
+    if (this.searchInput) {
+      this.searchInput.value = '';
+    }
+    if (this.searchClearBtn) {
+      this.searchClearBtn.style.display = 'none';
+    }
+    this.categoryBtns.forEach((btn) => {
+      const isAll = btn.dataset.category === 'all';
+      btn.classList.toggle('active', isAll);
+      btn.setAttribute('aria-selected', String(isAll));
+    });
+    this.render();
   }
-  
+
+  getFilteredPosts() {
+    return this.posts.filter((post) => {
+      const matchesCategory =
+        this.activeCategory === 'all' || post.category === this.activeCategory;
+      if (!matchesCategory) return false;
+
+      if (!this.searchQuery) return true;
+
+      const q = this.searchQuery;
+      const titleMatch = post.title?.toLowerCase().includes(q);
+      const excerptMatch = post.excerpt?.toLowerCase().includes(q);
+      const badgeMatch = post.badge?.toLowerCase().includes(q);
+      const authorMatch = post.author?.toLowerCase().includes(q);
+      const contentMatch = post.content?.toLowerCase().includes(q);
+
+      return (
+        titleMatch || excerptMatch || badgeMatch || authorMatch || contentMatch
+      );
+    });
+  }
+
+  render() {
+    const filtered = this.getFilteredPosts();
+
+    // Atualiza contador
+    if (this.counterEl) {
+      const total = filtered.length;
+      if (total === 0) {
+        this.counterEl.textContent = 'Nenhuma notícia encontrada';
+      } else if (total === 1) {
+        this.counterEl.textContent = '1 publicação encontrada';
+      } else {
+        this.counterEl.textContent = `${total} publicações encontradas`;
+      }
+    }
+
+    // Se vazio, exibe estado vazio
+    if (filtered.length === 0) {
+      if (this.featuredWrapper) this.featuredWrapper.style.display = 'none';
+      if (this.gridContainer) this.gridContainer.innerHTML = '';
+      if (this.emptyEl) this.emptyEl.style.display = 'block';
+      return;
+    }
+
+    if (this.emptyEl) this.emptyEl.style.display = 'none';
+
+    // Artigo em Destaque:
+    // Exibe o primeiro post com featured: true (ou o primeiro da lista se não houver busca ativa)
+    let featuredPost = null;
+    let gridPosts = [...filtered];
+
+    if (!this.searchQuery && this.activeCategory === 'all') {
+      const explicitFeaturedIndex = gridPosts.findIndex((p) => p.featured);
+      if (explicitFeaturedIndex !== -1) {
+        featuredPost = gridPosts.splice(explicitFeaturedIndex, 1)[0];
+      } else {
+        featuredPost = gridPosts.shift();
+      }
+    } else if (gridPosts.length > 0) {
+      // Se estiver filtrado, usa o primeiro como destaque se houver mais de 1
+      if (gridPosts.length >= 2) {
+        featuredPost = gridPosts.shift();
+      }
+    }
+
+    // Renderiza Destaque
+    if (featuredPost && this.featuredContainer && this.featuredWrapper) {
+      this.featuredWrapper.style.display = 'block';
+      this.featuredContainer.innerHTML = this.createFeaturedHtml(featuredPost);
+    } else if (this.featuredWrapper) {
+      this.featuredWrapper.style.display = 'none';
+    }
+
+    // Renderiza Grid
+    if (this.gridContainer) {
+      this.gridContainer.innerHTML = gridPosts
+        .map((post) => this.createCardHtml(post))
+        .join('');
+    }
+
+    // Observa novos elementos com animação reveal
+    document
+      .querySelectorAll('.blog-card, .blog-featured-card')
+      .forEach((el) => {
+        revealObserver.observe(el);
+      });
+  }
+
+  createFeaturedHtml(post) {
+    return `
+      <article class="blog-featured-card reveal">
+        <div class="featured-image-area">
+          <span class="featured-tag-badge">⭐ Destaque</span>
+          <span class="featured-category-badge">${this.escapeHtml(post.badge)}</span>
+          <img src="${this.escapeHtml(post.image)}" alt="${this.escapeHtml(post.title)}" loading="lazy" />
+        </div>
+        <div class="featured-content-area">
+          <div class="blog-meta-row">
+            <span class="blog-date-text">${this.escapeHtml(post.date)}</span>
+            <span>•</span>
+            <span class="blog-read-time-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              ${this.escapeHtml(post.readTime || '3 min de leitura')}
+            </span>
+          </div>
+          <h3 class="featured-title">${this.escapeHtml(post.title)}</h3>
+          <p class="featured-excerpt">${this.escapeHtml(post.excerpt)}</p>
+          <div class="featured-footer">
+            <div class="featured-author">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>${this.escapeHtml(post.author || 'Equipe Arbo')}</span>
+            </div>
+            <button type="button" class="btn-read-featured open-blog-post" data-post-id="${this.escapeHtml(post.id)}">
+              Ler artigo completo →
+            </button>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  createCardHtml(post) {
+    return `
+      <article class="blog-card reveal">
+        <div class="blog-card-image">
+          <span class="blog-card-badge">${this.escapeHtml(post.badge)}</span>
+          <img src="${this.escapeHtml(post.image)}" alt="${this.escapeHtml(post.title)}" loading="lazy" />
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <span class="blog-date-text">${this.escapeHtml(post.date)}</span>
+            <span class="blog-read-time-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 0.85rem; height: 0.85rem;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              ${this.escapeHtml(post.readTime || '3 min')}
+            </span>
+          </div>
+          <h3>${this.escapeHtml(post.title)}</h3>
+          <p>${this.escapeHtml(post.excerpt)}</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-author">${this.escapeHtml(post.author || 'Equipe Arbo')}</span>
+            <button type="button" class="blog-card-link open-blog-post" data-post-id="${this.escapeHtml(post.id)}">
+              Ler mais →
+            </button>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  openArticleModal(postId) {
+    const post = this.posts.find((p) => p.id === postId);
+    if (!post || !this.modal) return;
+
+    this.currentModalPost = post;
+
+    const modalImage = document.getElementById('modalImage');
+    const modalBadge = document.getElementById('modalBadge');
+    const modalReadTime = document.getElementById('modalReadTime');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalDate = document.getElementById('modalDate');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalContent = document.getElementById('modalContent');
+
+    if (modalImage) {
+      modalImage.src = post.image;
+      modalImage.alt = post.title;
+    }
+    if (modalBadge) modalBadge.textContent = post.badge;
+    if (modalReadTime)
+      modalReadTime.textContent = post.readTime || '3 min de leitura';
+    if (modalAuthor)
+      modalAuthor.textContent = post.author || 'Equipe Arbo Inteligente';
+    if (modalDate) modalDate.textContent = post.date;
+    if (modalTitle) modalTitle.textContent = post.title;
+    if (modalDescription) modalDescription.textContent = post.excerpt || '';
+    if (modalContent) modalContent.innerHTML = post.content || '';
+
+    this.modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Atualiza hash na URL sem scroll agressivo
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', `#noticia-${post.id}`);
+    }
+  }
+
   closeModal() {
-    this.modal.classList.remove("active");
-    document.body.style.overflow = "";
+    if (!this.modal) return;
+    this.modal.classList.remove('active');
+    document.body.style.overflow = '';
+    this.currentModalPost = null;
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(
+        null,
+        '',
+        window.location.pathname + window.location.search,
+      );
+    }
+  }
+
+  shareCurrentPost() {
+    if (!this.currentModalPost) return;
+
+    const post = this.currentModalPost;
+    const shareUrl = `${window.location.origin}${window.location.pathname}#noticia-${post.id}`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard
+        .writeText(shareUrl)
+        .then(() => {
+          this.showToast(
+            '✓ Link do artigo copiado para a área de transferência!',
+          );
+        })
+        .catch(() => {
+          this.fallbackCopy(shareUrl);
+        });
+    } else {
+      this.fallbackCopy(shareUrl);
+    }
+  }
+
+  fallbackCopy(text) {
+    const tempInput = document.createElement('input');
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+      document.execCommand('copy');
+      this.showToast('✓ Link do artigo copiado!');
+    } catch (err) {
+      this.showToast('Não foi possível copiar o link.');
+    }
+    document.body.removeChild(tempInput);
+  }
+
+  showToast(message) {
+    if (!this.toast) return;
+    this.toast.textContent = message;
+    this.toast.classList.add('show');
+
+    clearTimeout(this.toastTimeout);
+    this.toastTimeout = setTimeout(() => {
+      this.toast.classList.remove('show');
+    }, 3200);
+  }
+
+  checkUrlHash() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#noticia-')) {
+      const postId = hash.replace('#noticia-', '');
+      setTimeout(() => {
+        const post = this.posts.find((p) => p.id === postId);
+        if (post) {
+          const noticiasSection = document.getElementById('noticias');
+          noticiasSection?.scrollIntoView({ behavior: 'smooth' });
+          this.openArticleModal(postId);
+        }
+      }, 300);
+    }
+  }
+
+  escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
 }
+
+/* ============================================================
+   CARROSSEL DE EVENTOS (Destaques & Passagem Automática)
+   ============================================================ */
+
+class EventsCarousel {
+  constructor() {
+    this.carousel = document.getElementById('eventsCarousel');
+    this.prevBtn = document.getElementById('eventPrev');
+    this.nextBtn = document.getElementById('eventNext');
+    this.indicatorsContainer = document.getElementById('eventsIndicators');
+    this.slides = this.carousel
+      ? Array.from(this.carousel.querySelectorAll('.event-slide'))
+      : [];
+    this.currentIndex = 0;
+    this.autoPlayInterval = null;
+    this.autoPlayDelay = 4500; // 4.5 segundos por slide
+
+    if (this.carousel && this.slides.length > 0) {
+      this.init();
+    }
+  }
+
+  init() {
+    this.createIndicators();
+    this.bindEvents();
+    this.startAutoPlay();
+    this.updateActiveState(0);
+  }
+
+  createIndicators() {
+    if (!this.indicatorsContainer) return;
+    this.indicatorsContainer.innerHTML = '';
+    this.indicators = this.slides.map((_, idx) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `event-indicator${idx === 0 ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Ir para evento ${idx + 1}`);
+      dot.dataset.index = String(idx);
+      dot.addEventListener('click', () => {
+        this.goToSlide(idx);
+        this.restartAutoPlay();
+      });
+      this.indicatorsContainer.appendChild(dot);
+      return dot;
+    });
+  }
+
+  bindEvents() {
+    this.prevBtn?.addEventListener('click', () => {
+      this.prev();
+      this.restartAutoPlay();
+    });
+
+    this.nextBtn?.addEventListener('click', () => {
+      this.next();
+      this.restartAutoPlay();
+    });
+
+    // Pausar autoplay durante interação do usuário
+    const carouselWrapper =
+      this.carousel.closest('.events-carousel-wrapper') || this.carousel;
+    carouselWrapper.addEventListener('mouseenter', () => this.pauseAutoPlay());
+    carouselWrapper.addEventListener('mouseleave', () => this.startAutoPlay());
+    carouselWrapper.addEventListener(
+      'touchstart',
+      () => this.pauseAutoPlay(),
+      { passive: true },
+    );
+    carouselWrapper.addEventListener('touchend', () => this.startAutoPlay(), {
+      passive: true,
+    });
+
+    // Sincronizar indicadores com scroll manual
+    let scrollTimeout;
+    this.carousel.addEventListener(
+      'scroll',
+      () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          this.syncIndexFromScroll();
+        }, 80);
+      },
+      { passive: true },
+    );
+
+    // Navegação por teclado
+    this.carousel.setAttribute('tabindex', '0');
+    this.carousel.setAttribute('role', 'region');
+    this.carousel.setAttribute('aria-label', 'Carrossel de eventos');
+    this.carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        this.prev();
+        this.restartAutoPlay();
+      } else if (e.key === 'ArrowRight') {
+        this.next();
+        this.restartAutoPlay();
+      }
+    });
+  }
+
+  syncIndexFromScroll() {
+    if (!this.carousel || !this.slides.length) return;
+    const scrollLeft = this.carousel.scrollLeft;
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    this.slides.forEach((slide, idx) => {
+      const distance = Math.abs(
+        slide.offsetLeft - this.carousel.offsetLeft - scrollLeft,
+      );
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = idx;
+      }
+    });
+
+    if (closestIndex !== this.currentIndex) {
+      this.currentIndex = closestIndex;
+      this.updateActiveState(this.currentIndex);
+    }
+  }
+
+  goToSlide(index) {
+    if (index < 0) index = this.slides.length - 1;
+    if (index >= this.slides.length) index = 0;
+    this.currentIndex = index;
+
+    const targetSlide = this.slides[index];
+    if (targetSlide) {
+      const targetLeft = targetSlide.offsetLeft - this.carousel.offsetLeft;
+      this.carousel.scrollTo({
+        left: targetLeft,
+        behavior: 'smooth',
+      });
+    }
+
+    this.updateActiveState(index);
+  }
+
+  next() {
+    const nextIdx = (this.currentIndex + 1) % this.slides.length;
+    this.goToSlide(nextIdx);
+  }
+
+  prev() {
+    const prevIdx =
+      (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.goToSlide(prevIdx);
+  }
+
+  updateActiveState(index) {
+    if (this.indicators) {
+      this.indicators.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === index);
+        dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
+      });
+    }
+  }
+
+  startAutoPlay() {
+    this.pauseAutoPlay();
+    this.autoPlayInterval = setInterval(() => {
+      this.next();
+    }, this.autoPlayDelay);
+  }
+
+  pauseAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+
+  restartAutoPlay() {
+    this.pauseAutoPlay();
+    this.startAutoPlay();
+  }
+}
+
+/* ============================================================
+   FORMULÁRIO DE CONTATO (Feedback Interativo)
+   ============================================================ */
+
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const toast = document.getElementById('blogToast');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('formName');
+    const senderName = nameInput ? nameInput.value.trim() : 'Obrigado';
+
+    if (toast) {
+      toast.textContent = `✓ Mensagem recebida, ${senderName}! Entraremos em contato com você pelo e-mail informado.`;
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4500);
+    }
+
+    form.reset();
+  });
+}
+
+// Inicializa todos os módulos quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+  new BlogManager();
+  new EventsCarousel();
+  initContactForm();
+});
+
