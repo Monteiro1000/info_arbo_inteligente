@@ -201,7 +201,18 @@ class BlogManager {
     if (filtered.length === 0) {
       if (this.featuredWrapper) this.featuredWrapper.style.display = 'none';
       if (this.gridContainer) this.gridContainer.innerHTML = '';
-      if (this.emptyEl) this.emptyEl.style.display = 'block';
+      if (this.emptyEl) {
+        this.emptyEl.style.display = 'block';
+        const emptyTitle = document.getElementById('blogEmptyTitle');
+        const emptyDesc = document.getElementById('blogEmptyDesc');
+        if (this.searchQuery) {
+          if (emptyTitle) emptyTitle.textContent = 'Nenhum resultado encontrado';
+          if (emptyDesc) emptyDesc.textContent = `Não encontramos nenhuma publicação para "${this.searchQuery}". Tente outros termos de busca.`;
+        } else {
+          if (emptyTitle) emptyTitle.textContent = 'Artigos em Produção';
+          if (emptyDesc) emptyDesc.textContent = 'Ainda não há publicações nesta categoria. Nossos artigos técnicos e científicos estão em fase de produção por nossa equipe e serão lançados em breve!';
+        }
+      }
       return;
     }
 
