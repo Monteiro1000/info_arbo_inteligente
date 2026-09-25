@@ -47,7 +47,7 @@ const BLOG_POSTS = [
       </ul>
 
       <blockquote class="blog-quote">
-        "Este portal representa a evolução do nosso compromisso: levar dados ambientais precisos para a palma da mão de gestores e cidadãos, transformando o futuro das nossas cidades."
+        O site foi desenvolvido com o objetivo de mostrar uma visão geral do projeto e publicar notícias e conteúdos relevantes sobre arborização. Posteriormente, iremos lançar o sistema de monitoramento em tempo real, com dashboards e relatórios técnicos para pesquisadores e gestores públicos.
       </blockquote>
 
       <h3>Artigos científicos e técnicos em produção</h3>
