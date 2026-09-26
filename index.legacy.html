@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arborização Inteligente | Monitoramento Arbóreo para Cidades mais Verdes</title>
+  <meta name="description" content="Sistema de monitoramento arbóreo inteligente capaz de analisar déficit vegetal, saúde arbórea e espécies invasoras com sensores IoT, drones e IA nas cidades sergipanas e brasileiras." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER & NAVBAR -->
+  <header class="site-header" id="home">
+    <div class="topbar container" id="topbar">
+      <a class="brand" href="#home" aria-label="Página inicial Arborização Inteligente">
+        <img class="brand-logo" src="assets/logo.png" alt="Logo Arborização Inteligente" />
+        <span class="brand-text">
+          <strong>Arborização Inteligente</strong>
+          <small>Monitoramento arbóreo para cidades mais verdes</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+      <nav class="main-nav" id="main-nav" aria-label="Menu principal">
+        <div class="nav-drawer-header">
+          <div class="nav-drawer-brand">
+            <img class="nav-drawer-logo" src="assets/logo.png" alt="Logo Arborização Inteligente" />
+            <span>Arborização Inteligente</span>
+          </div>
+          <button class="nav-close-btn" id="navCloseBtn" aria-label="Fechar menu">&times;</button>
+        </div>
+        <div class="nav-links-wrapper">
+          <a class="nav-link" href="#arborizacao">Arborização</a>
+          <a class="nav-link" href="#solucao">Solução & Planos</a>
+          <a class="nav-link" href="#quem-somos">Quem somos</a>
+          <a class="nav-link" href="#eventos">Destaques</a>
+          <a class="nav-link" href="#noticias">Blog</a>
+          <a class="nav-link" href="#contato">Contato</a>
+        </div>
+        <div class="nav-drawer-footer">
+          <a class="contact-link" href="#contato">Falar com a equipe</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Sistema de Monitoramento Arbóreo Inteligente
+        </p>
+        <h1>Arborização Inteligente</h1>
+        <p class="hero-slogan">"Uma cidade inteligente é aquela que usa tecnologia para preservar a vida."</p>
+        <p class="lead">
+          Nascemos com o propósito de transformar a arborização urbana através de dados estratégicos, telemetria IoT e inteligência artificial. Considerando que Sergipe apresenta o <strong>menor índice de vias arborizadas do Brasil</strong>, segundo o <strong>Censo do IBGE (2022)</strong>, criamos uma solução completa para fornecer dados que auxiliem a gestão pública e a população na tomada de decisões eficientes, reduzindo ilhas de calor e priorizando espécies nativas.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#solucao" class="btn btn-primary">Conhecer a Solução</a>
+          <a href="#contato" class="btn btn-outline">Entrar em Contato</a>
+        </div>
+
+        <ul class="hero-highlights">
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3c-4 0-8 3-8 9 0 4 3 7 7 8 1-5 3-9 9-13-2-2-5-4-8-4z" fill="currentColor"/></svg>
+            </span>
+            <span>Sensores IoT (ESP32)</span>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="7" r="1.6" fill="currentColor"/></svg>
+            </span>
+            <span>Drones & IA Preventiva</span>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+            </span>
+            <span>Satélite & Planos</span>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="currentColor"/></svg>
+            </span>
+            <span>Alinhado aos ODS da ONU</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <svg class="header-canopy" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+      <path class="canopy-path" d="M0,120 C150,180 300,40 450,110 C600,180 750,40 900,110 C1050,180 1150,90 1200,120" />
+    </svg>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         1. SEÇÃO: ARBORIZAÇÃO (O que é, Brasil, Nordeste e Sergipe)
+         ============================================================ -->
+    <section class="arborizacao-section" id="arborizacao">
+      <div class="container">
+        <div class="section-header text-center">
+        
+          <h2>Arborização: O que é e por que é um desafio urgente?</h2>
+          <p class="section-text">
+            Compreenda a importância vital da cobertura arbórea urbana e o cenário alarmante enfrentado no Brasil, na região Nordeste e especialmente no estado de Sergipe.
+          </p>
+        </div>
+
+        <div class="arborizacao-grid">
+          <!-- Card 1: O que é -->
+          <article class="arbor-card reveal">
+            <div class="arbor-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22v-8M12 14c-4 0-7-3-7-7 0-3 3-5 7-5s7 2 7 5c0 4-3 7-7 7z"/>
+                <path d="M9 18l3-4 3 4"/>
+              </svg>
+            </div>
+            <h3>O que é Arborização Urbana?</h3>
+            <p>
+              Arborização urbana é o conjunto de toda a vegetação de porte arbóreo presente em vias públicas, praças, parques e calçadas das cidades. Mais do que embelezamento estético, árvores são infraestrutura verde vital:
+            </p>
+            <ul class="arbor-list">
+              <li><strong>Conforto Térmico:</strong> Redução comprovada de 2°C a 5°C na temperatura dos microclimas urbanos.</li>
+              <li><strong>Qualidade do Ar:</strong> Retenção de gases poluentes e particulados nocivos à saúde respiratória.</li>
+              <li><strong>Drenagem e Solo:</strong> Aumento da infiltração da água da chuva, evitando alagamentos e erosões.</li>
+              <li><strong>Qualidade de Vida:</strong> Redução comprovada do estresse e promoção da biodiversidade local.</li>
+            </ul>
+          </article>
+
+          <!-- Card 2: Brasil e Nordeste -->
+          <article class="arbor-card reveal" style="--delay: 0.15s">
+            <div class="arbor-icon-wrapper warning">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3>O Problema no Brasil e no Nordeste</h3>
+            <p>
+              Grande parte das cidades brasileiras e nordestinas se expandiu sem um planejamento ambiental preventivo. Esse descompasso gerou desafios graves:
+            </p>
+            <ul class="arbor-list">
+              <li><strong>Ausência de Planejamento Técnico:</strong> Espécies plantadas sem critérios de porte, raízes e compatibilidade com redes elétricas.</li>
+              <li><strong>Conflito com Redes Elétricas:</strong> Quedas constantes de energia decorrentes de galhos em contato com a fiação e podas drásticas mutiladoras.</li>
+              <li><strong>Espécies Invasoras:</strong> Disseminação descontrolada de plantas invasoras que sufocam e empobrecem a flora nativa local.</li>
+              <li><strong>Falta de Dados Concretos:</strong> Prefeituras e secretarias carecem de laudos e mapas digitais para gerir seu patrimônio verde.</li>
+            </ul>
+          </article>
+
+          <!-- Card 3: Sergipe e Censo IBGE 2022 -->
+          <article class="arbor-card highlight-card reveal" style="--delay: 0.3s">
+            <div class="arbor-icon-wrapper danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <div class="stat-highlight">
+              <span class="stat-num">Menor</span>
+              <span class="stat-label">Índice de vias arborizadas do Brasil (IBGE 2022)</span>
+            </div>
+            <h3>O Desafio Crítico em Sergipe</h3>
+            <p>
+              Segundo os dados oficiais do <strong>Censo do IBGE (2022)</strong>, <strong>Sergipe é o estado brasileiro com o menor índice de vias públicas arborizadas de todo o país</strong>.
+            </p>
+            <p>
+              Essa escassez severa potencializa diretamente o fenômeno das <strong>ilhas de calor</strong>, elevando as temperaturas nas ruas, aumentando a incidência de problemas de saúde pública e diminuindo o bem-estar da população. A <strong>Arborização Inteligente</strong> nasceu em solo sergipano exatamente para transformar essa realidade por meio da ciência e da tecnologia.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. SEÇÃO: SOLUÇÃO (Os 4 Planos, Sensores, Hardware, IA)
+         ============================================================ -->
+    <section class="solution-section" id="solucao">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Tecnologia & Inovação
+          </p>
+          <h2>Nossa Solução: Monitoramento Arbóreo Inteligente</h2>
+          <p class="section-text">
+            Um sistema de monitoramento arbóreo capaz de analisar áreas com déficit vegetal, avaliar a saúde das árvores em tempo real e diferenciar espécies nativas de invasoras por meio de sensores IoT, inteligência artificial e drones.
+          </p>
+        </div>
+
+        <!-- Hardware & Tecnologias -->
+        <div class="tech-ecosystem-box reveal">
+          <div class="tech-box-header">
+            <h3>Tecnologias Integradas ao Sistema</h3>
+            <p>Conheça os componentes de hardware e software que operam em campo e na nuvem:</p>
+          </div>
+          <div class="tech-pills-grid">
+            <div class="tech-pill-item">
+              <p class="topic-rect-blue">01</p>
+              <div>
+                <strong>Microcontrolador ESP32</strong>
+                <span>Cérebro IoT para processamento local, telemetria sem fio e baixo consumo energético.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <p class="topic-rect-blue">02</p>
+              <div>
+                <strong>Sensores DHT11 & AHT25</strong>
+                <span>Medição precisa de temperatura e umidade relativa do ar, diagnosticando a qualidade do microclima.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <p class="topic-rect-blue">03</p>
+              <div>
+                <strong>Sensor de Umidade do Solo</strong>
+                <span>Monitoramento das condições hídricas radiculares para prevenção de estresse vegetal.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <p class="topic-rect-blue">04</p>
+              <div>
+                <strong>IA & Visão Computacional</strong>
+                <span>Modelos preditivos para identificar espécies nativas vs invasoras e detecção preventiva de doenças.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <p class="topic-rect-blue">05</p>
+              <div>
+                <strong>Câmeras Urbanas Futuras</strong>
+                <span>Varredura automatizada das ruas para contagem de árvores e monitoramento da copa arbórea.</span>
+              </div>
+            </div>
+            <div class="tech-pill-item">
+              <p class="topic-rect-blue">06</p>
+              <div>
+                <strong>Ações com a Comunidade</strong>
+                <span>Palestras interativas em escolas e universidades para sensibilização e educação ambiental.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OS 4 PLANOS DA SOLUÇÃO -->
+        <div class="plans-container">
+          <div class="plans-title-wrapper text-center">
+            <span class="plans-badge">Modelos de Atendimento</span>
+            <h3>Os 4 Planos do Projeto Arborização Inteligente</h3>
+            <p class="section-text">Estruturados sob medida para atender desde pequenos municípios até grandes centros urbanos e indústrias:</p>
+          </div>
+
+          <div class="plans-grid">
+            <!-- Plano 1: Base -->
+            <div class="plan-card reveal">
+              <div class="plan-header">
+                <span class="topic-rect-green">01</span>
+                <span class="plan-tag">Plano 1</span>
+                <h4>Plano Base</h4>
+              </div>
+              <p class="plan-summary">Mapeamento e diagnóstico macroscópico por satélite.</p>
+              <ul class="plan-features">
+                <li>Imagens de satélite multiespectrais em alta resolução</li>
+                <li>Cálculo de índices de vegetação (NDVI)</li>
+                <li>Identificação de áreas com déficit crítico de arborização</li>
+                <li>Relatório panorâmico municipal de cobertura verde</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Diagnóstico inicial</span>
+              </div>
+            </div>
+
+            <!-- Plano 2: Técnico -->
+            <div class="plan-card reveal" style="--delay: 0.1s">
+              <div class="plan-header">
+                <span class="topic-rect-green">02</span>
+                <span class="plan-tag">Plano 2</span>
+                <h4>Plano Técnico</h4>
+              </div>
+              <p class="plan-summary">Área interativa onde técnicos e gestores mapeiam árvores por conta própria.</p>
+              <ul class="plan-features">
+                <li>Dashboard de gestão para prefeituras e secretarias</li>
+                <li>Ferramenta de cadastramento e geolocalização de árvores</li>
+                <li>Histórico de podas, adubações e manutenção fitossanitária</li>
+                <li>Classificação digital de espécies nativas e invasoras</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Secretarias e prefeituras</span>
+              </div>
+            </div>
+
+            <!-- Plano 3: Drones -->
+            <div class="plan-card featured-plan reveal" style="--delay: 0.2s">
+              <div class="plan-header">
+                <span class="topic-rect-green">03</span>
+                <span class="plan-tag">Plano 3</span>
+                <h4>Plano Integrado a Drones</h4>
+              </div>
+              <p class="plan-summary">Análise da cobertura vegetal e copas através de voos aéreos especializados.</p>
+              <ul class="plan-features">
+                <li>Voo automatizado com câmeras de alta definição</li>
+                <li>Modelagem 3D e ortomosaicos da vegetação urbana</li>
+                <li>Detecção precoce de pragas, galhos secos e risco de queda</li>
+                <li>Avaliação volumétrica do crescimento da copa arbórea</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Avenidas e corredores verdes</span>
+              </div>
+            </div>
+
+            <!-- Plano 4: Sensores -->
+            <div class="plan-card reveal" style="--delay: 0.3s">
+              <div class="plan-header">
+                <div class="plan-popular-tag">Alta Precisão</div>
+                <span class="topic-rect-green">04</span>
+                <span class="plan-tag">Plano 4</span>
+                <h4>Plano Sensores IoT</h4>
+              </div>
+              <p class="plan-summary">Monitoramento contínuo em tempo real por telemetria e internet das coisas.</p>
+              <ul class="plan-features">
+                <li>Estações IoT com microcontrolador ESP32 em vias estratégicas</li>
+                <li>Leitura 24/7 de umidade do ar, solo e temperatura (DHT11/AHT25)</li>
+                <li>Alertas automáticos de estresse hídrico e risco fitossanitário</li>
+                <li>Integração futura com câmeras de visão computacional</li>
+              </ul>
+              <div class="plan-footer">
+                <span class="plan-badge-ideal">Ideal para: Monitoramento crítico 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diferencial & Públicos-Alvo -->
+        <div class="solution-details-grid">
+          <div class="differential-card reveal">
+            <div class="card-kicker">Diferencial Inovador</div>
+            <h3>O que torna Arborização Inteligente um sistema único?</h3>
+            <p>
+              A <strong>Arborização Inteligente</strong> é a única plataforma que integra <strong>monitoramento em tempo real por sensores IoT</strong>, <strong>inteligência artificial preditiva</strong> e <strong>participação cidadã</strong> para transformar a gestão da arborização urbana em um processo preventivo, inteligente e fundamentado em evidências.
+            </p>
+            <div class="viability-note">
+              <strong>Viabilidade e Conformidade com os ODS:</strong>
+              <p>Resolve o impasse de secretarias de meio ambiente e prefeituras por relatórios técnicos precisos que respaldam tomadas de decisão, garantindo credibilidade pública e cumprimento das metas dos Objetivos de Desenvolvimento Sustentável (ODS).</p>
+            </div>
+          </div>
+
+          <div class="audience-card reveal">
+            <div class="card-kicker">Impacto Multissetorial</div>
+            <h3>Público-alvo e Beneficiários</h3>
+            <div class="audience-tags">
+              <span class="aud-tag">Prefeituras e Secretarias Municipais</span>
+              <span class="aud-tag">População Urbana e Bairros</span>
+              <span class="aud-tag">Planejadores Urbanos e Engenheiros</span>
+              <span class="aud-tag">Setor de Saúde Pública (Qualidade do Ar)</span>
+              <span class="aud-tag">Setor Energético (Menos Quedas de Rede)</span>
+              <span class="aud-tag">Escolas e Universidades</span>
+              <span class="aud-tag">ONGs e Organizações Ambientais</span>
+              <span class="aud-tag">Comerciantes e Vias Comerciais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. SEÇÃO: QUEM SOMOS NÓS, METAS E OBJETIVOS (JM & Equipe)
+         ============================================================ -->
+    <section class="team-section" id="quem-somos">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Equipe, Metas & Objetivos
+          </p>
+          <h2>Quem Somos Nós, Metas e Objetivos</h2>
+          <p class="section-text">
+            Conheça o time de estudantes, pesquisadores e inovadores sergipanos dedicado a construir cidades sustentáveis e inteligentes.
+          </p>
+        </div>
+
+        <!-- Grid de Membros da Equipe -->
+        <div class="team-grid">
+          <!-- Membro 1: Júlio Monteiro -->
+          <div class="team-card reveal">
+            <div class="member-photo-wrapper member-photo-julio">
+              <img src="assets/membros/juliomonteiro_crop.jpg" alt="Foto de Júlio Monteiro" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Júlio Monteiro</h4>
+              <span class="member-role">Fundador, Desenvolvedor & Designer</span>
+              <p class="member-desc">Idealizador da iniciativa, atua na liderança técnica, desenvolvimento de software e experiência visual. Graduando em Ciência da Computação pela UFS.</p>
+              <div class="member-socials">
+                <a href="https://www.linkedin.com/in/júlio-monteiro-298745304/" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Júlio Monteiro" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/juliomonteiro01_/" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Júlio Monteiro" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 6: Otávio -->
+          <div class="team-card reveal" style="--delay: 0.25s">
+            <div class="member-photo-wrapper member-photo-otavio">
+              <img src="assets/membros/otavio.jpeg" alt="Foto de Otávio" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Otávio</h4>
+              <span class="member-role">Pesquisa Ambiental & Sustentabilidade</span>
+              <p class="member-desc">Dedicado à pesquisa ecossistêmica, conservação e aplicação de métricas sustentáveis. Graduando em Ciências Biológicas pela UFS.</p>
+              <div class="member-socials">
+                <a href="https://www.linkedin.com/in/ot%C3%A1vio-da-cruz-santos-5a01b227a/" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Otávio" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/eiotaviodabiologia?stkn=cDlvczdlOWNkcmM4" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Otávio" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 7: Yann Vinícius -->
+          <div class="team-card reveal" style="--delay: 0.3s">
+            <div class="member-photo-wrapper member-photo-yann">
+              <img src="assets/membros/yan_crop.jpg" alt="Foto de Yann Vinícius" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Yann Vinícius</h4>
+              <span class="member-role">Pesquisa Ambiental & Sustentabilidade</span>
+              <p class="member-desc">Atua no mapeamento botânico, rigor ecológico e diretrizes de sustentabilidade do projeto. Graduando em Ciências Biológicas pela UFS.</p>
+              <div class="member-socials">
+                <a href="https://www.linkedin.com/in/yann-vinicius-a89502426?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Yann Vinícius" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/eu_yann_vinicius?stkn=MXBhMXhuMWU2NzZmMw==" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Yann Vinícius" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 2: Asafe Emanuel -->
+          <div class="team-card reveal" style="--delay: 0.05s">
+            <div class="member-photo-wrapper member-photo-asafe">
+              <img src="assets/membros/asafe.jpg" alt="Foto de Asafe Emanuel" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Asafe Emanuel</h4>
+              <span class="member-role">Pesquisa em Hardware & Robótica</span>
+              <p class="member-desc">Responsável pelo estudo de sensores, integração robótica e validação de viabilidade técnica. Estudante do Ensino Médio.</p>
+              <div class="member-socials">
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Asafe Emanuel" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Asafe Emanuel" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+            <!-- Membro 5: Jonatas -->
+          <div class="team-card reveal" style="--delay: 0.2s">
+            <div class="member-photo-wrapper member-photo-jonatas">
+              <img src="assets/membros/jonatas.jpeg" alt="Foto de Jonatas" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Jonatas</h4>
+              <span class="member-role">Manejo Vegetal & Pesquisa Técnica</span>
+              <p class="member-desc">Especialista técnico em podas e saúde da vegetação, aliando boas práticas agrícolas à inovação. Graduando em Agroindústria pela UFS.</p>
+              <div class="member-socials">
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jonatas" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jonatas" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 3: Ellen -->
+          <div class="team-card reveal" style="--delay: 0.1s">
+            <div class="member-photo-wrapper member-photo-ellen">
+              <img src="assets/membros/ellen.jpeg" alt="Foto de Ellen" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Ellen</h4>
+              <span class="member-role">Pesquisa Ambiental & Sustentabilidade</span>
+              <p class="member-desc">Focada na análise ecológica, impacto sustentável e levantamento ambiental do projeto. Graduanda em Ciências Biológicas pela UFS.</p>
+              <div class="member-socials">
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ellen" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Ellen" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 4: Evilyn -->
+          <div class="team-card reveal" style="--delay: 0.15s">
+            <div class="member-photo-wrapper member-photo-evilyn">
+              <img src="assets/membros/evilyn.png" alt="Foto de Evilyn" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Evilyn</h4>
+              <span class="member-role">Design & Identidade Visual</span>
+              <p class="member-desc">Atua na concepção visual, layout de interfaces e comunicação gráfica da iniciativa. Estudante do Ensino Médio.</p>
+              <div class="member-socials">
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Evilyn" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Evilyn" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          
+
+          <!-- Membro 8: Pedro Moisés -->
+          <div class="team-card reveal" style="--delay: 0.35s">
+            <div class="member-photo-wrapper member-photo-pedro">
+              <img src="assets/membros/pedro.jpg" alt="Foto de Pedro Moisés" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Pedro Moisés</h4>
+              <span class="member-role">Pesquisa em Hardware & Robótica</span>
+              <p class="member-desc">Focado no dimensionamento de sensores, testes de bancada e automação de sistemas. Estudante do Ensino Médio.</p>
+              <div class="member-socials">
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pedro Moisés" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Pedro Moisés" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 9: Vanessa Simplício -->
+          <div class="team-card reveal" style="--delay: 0.4s">
+            <div class="member-photo-wrapper member-photo-vanessa">
+              <img src="assets/membros/vanessa_crop.jpg" alt="Foto de Vanessa Simplício" loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h4>Vanessa Simplício</h4>
+              <span class="member-role">Comunicação & Relações Públicas</span>
+              <p class="member-desc">Responsável pela narrativa, assessoria editorial e divulgação estratégica do projeto. Graduanda em Jornalismo pela UFS.</p>
+              <div class="member-socials">
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Vanessa Simplício" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="#" class="member-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Vanessa Simplício" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metas, Objetivos e ODS -->
+        <div class="goals-container reveal">
+          <div class="goals-header">
+            <h3>Metas, Objetivos e Compromisso com os ODS</h3>
+            <p>Trabalhamos orientados por indicadores claros de curto, médio e longo prazo:</p>
+          </div>
+
+          <div class="goals-grid">
+            <div class="goal-item">
+              <div class="goal-badge">Curto Prazo</div>
+              <h4>Pilotos & Validação em Sergipe</h4>
+              <p>Instalação de estações de sensores em vias críticas sergipanas, validação dos modelos preditivos e realização de oficinas educativas em escolas parceiras.</p>
+            </div>
+
+            <div class="goal-item">
+              <div class="goal-badge">Médio Prazo</div>
+              <h4>Expansão para Municípios do Nordeste</h4>
+              <p>Firmar termos de cooperação com prefeituras municipais, implantando o Plano Técnico e o monitoramento integrado com drones para suporte a decisões públicas.</p>
+            </div>
+
+            <div class="goal-item">
+              <div class="goal-badge">Longo Prazo</div>
+              <h4>Referência Nacional em Cidade Inteligente</h4>
+              <p>Consolidar a maior base de inteligência arbórea do Brasil, reduzindo em grande escala ilhas de calor e valorizando espécies nativas em cidades de todo o país.</p>
+            </div>
+          </div>
+
+          <!-- Selos ODS -->
+          <div class="ods-wrapper">
+            <span class="ods-label">Alinhamento Estratégico com os Objetivos de Desenvolvimento Sustentável (ONU):</span>
+            <div class="ods-badges-list">
+              <div class="ods-badge-card ods-11">
+                <div class="ods-image-wrapper">
+                  <img src="design/ods/ODS11.webp" alt="ODS 11 - Cidades e Comunidades Sustentáveis" class="ods-badge-img" loading="lazy" />
+                </div>
+                <span class="ods-number">ODS 11</span>
+                <strong>Cidades e Comunidades Sustentáveis</strong>
+                <p>Tornar as cidades e assentamentos inclusivos, seguros, resilientes e sustentáveis.</p>
+              </div>
+              <div class="ods-badge-card ods-13">
+                <div class="ods-image-wrapper">
+                  <img src="design/ods/ODS13.webp" alt="ODS 13 - Ação Contra a Mudança Global do Clima" class="ods-badge-img" loading="lazy" />
+                </div>
+                <span class="ods-number">ODS 13</span>
+                <strong>Ação Contra a Mudança Global do Clima</strong>
+                <p>Adotar medidas urgentes para combater a mudança climática e seus impactos locais.</p>
+              </div>
+              <div class="ods-badge-card ods-15">
+                <div class="ods-image-wrapper">
+                  <img src="design/ods/ODS15.png" alt="ODS 15 - Vida Terrestre" class="ods-badge-img" loading="lazy" />
+                </div>
+                <span class="ods-number">ODS 15</span>
+                <strong>Vida Terrestre</strong>
+                <p>Proteger, recuperar e promover o uso sustentável dos ecossistemas terrestres e flora nativa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. SEÇÃO: DESTAQUES (Reconhecimento & Premiações)
+         ============================================================ -->
+    <section class="events-section" id="eventos">
+      <div class="container">
+        <div class="events-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Destaques
+          </p>
+          <h2>Destaques do Projeto</h2>
+          <p class="section-text">
+            Reconhecimento, premiações e participações oficiais da Arborização Inteligente em feiras científicas, eventos de inovação e conferências climáticas.
+          </p>
+        </div>
+
+        <!-- Carrossel de Eventos em Destaque -->
+        <div class="events-carousel-wrapper">
+          <button class="events-nav-btn prev" id="eventPrev" aria-label="Destaque anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="events-carousel" id="eventsCarousel">
+            <!-- Destaque 1: CIENART -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill past">Ouro Duplo</span>
+                  <img src="assets/eventos/cienart.jpg" alt="Equipe premiada na CIENART" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Setembro 2025 • Aracaju, SE</span>
+                  <h3>CIENART 2025</h3>
+                  <p class="event-desc">
+                    Feira Científica de Sergipe reunindo projetos inovadores de todo o estado. A Arborização Inteligente foi consagrada como bimedalhista de ouro em duas categorias pelo desenvolvimento e impacto da solução para a sustentabilidade urbana.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🥇 Bimedalhistas de Ouro</span>
+                    <span class="event-attendees-tag">2 Categorias Premiadas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destaque 2: ROBOT-SE -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill past">Vice-Campeões</span>
+                  <img src="assets/eventos/robotse.jpg" alt="Equipe no ROBOT-SE" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Sergipe</span>
+                  <h3>ROBOT-SE</h3>
+                  <p class="event-desc">
+                    Maior competição de robótica e tecnologia STEM da região. Conquistamos o título de vice-campeões demonstrando na prática o funcionamento do protótipo IoT com ESP32 e telemetria arbórea em tempo real.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🥈 Vice-Campeões</span>
+                    <span class="event-attendees-tag">Demonstração Prática IoT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destaque 3: Mini COP 30 Sergipe -->
+            <div class="event-slide">
+              <div class="event-card-inner">
+                <div class="event-image-box">
+                  <span class="event-status-pill past">Realizado</span>
+                  <img src="assets/eventos/mini-cop.jpg" alt="Mini COP 30 Sergipe" loading="lazy" />
+                </div>
+                <div class="event-body-box">
+                  <span class="event-date-tag">Agosto 2025 • Aracaju, SE</span>
+                  <h3>Mini COP 30 Sergipe</h3>
+                  <p class="event-desc">
+                    Conferência preparatória sobre mudanças climáticas e adaptação sustentável. Apresentação do projeto como referência em uso de tecnologia para preservação da vida e combate às ilhas de calor.
+                  </p>
+                  <div class="event-meta-footer">
+                    <span class="event-highlight-tag">🌍 Adaptação Climática</span>
+                    <span class="event-attendees-tag">500+ participantes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="events-nav-btn next" id="eventNext" aria-label="Próximo destaque">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Indicadores do Carrossel de Eventos -->
+        <div class="events-carousel-indicators" id="eventsIndicators">
+          <!-- Gerados dinamicamente via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. SEÇÃO: BLOG & NOTÍCIAS DO PROJETO
+         ============================================================ -->
+    <section class="news-section blog-section" id="noticias">
+      <div class="container">
+        <div class="news-header blog-header">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Atualizações e Artigos
+          </p>
+          <h2>Blog & Notícias do Projeto</h2>
+          <p class="section-text">
+            Acompanhe as publicações mais recentes, artigos técnicos, pesquisas de campo e marcos da Arborização Inteligente.
+          </p>
+        </div>
+
+        <!-- Barra de Busca e Categorias do Blog -->
+        <div class="blog-toolbar">
+          <search class="blog-search-wrapper">
+            <form id="blogSearchForm" class="blog-search-form" role="search" aria-label="Pesquisar publicações">
+              <div class="blog-search-box">
+                <input 
+                  type="search" 
+                  id="blogSearchInput" 
+                  name="q" 
+                  placeholder="Buscar artigos..." 
+                  aria-label="Buscar artigos" 
+                  autocomplete="off" 
+                />
+                <button type="button" class="blog-search-clear" id="blogSearchClear" aria-label="Limpar busca" title="Limpar busca" style="display: none;">&times;</button>
+                <button type="submit" class="blog-search-btn" id="blogSearchBtn" aria-label="Pesquisar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </search>
+
+          <div class="blog-categories" id="blogCategories" role="tablist" aria-label="Filtrar por categoria">
+            <button type="button" class="category-btn active" data-category="all" role="tab" aria-selected="true">Todos</button>
+            <button type="button" class="category-btn" data-category="tecnologia" role="tab" aria-selected="false">Tecnologia</button>
+            <button type="button" class="category-btn" data-category="sustentabilidade" role="tab" aria-selected="false">Sustentabilidade</button>
+            <button type="button" class="category-btn" data-category="inovacao" role="tab" aria-selected="false">Inovação</button>
+            <button type="button" class="category-btn" data-category="comunidade" role="tab" aria-selected="false">Comunidade</button>
+            <button type="button" class="category-btn" data-category="pesquisa" role="tab" aria-selected="false">Pesquisa</button>
+          </div>
+        </div>
+
+        <!-- Artigo em Destaque -->
+        <div class="blog-featured-wrapper" id="blogFeaturedWrapper">
+          <div id="blogFeatured"></div>
+        </div>
+
+        <!-- Cabeçalho do Grid de Publicações -->
+        <div class="blog-grid-header">
+          <h3 class="blog-grid-title">Publicações do Projeto</h3>
+          <span class="blog-counter" id="blogCounter">Carregando notícias...</span>
+        </div>
+
+        <!-- Grid de Artigos do Blog -->
+        <div class="blog-grid" id="blogGrid">
+          <!-- Renderizado dinamicamente a partir de news-data.js -->
+        </div>
+
+        <!-- Estado Vazio (quando não há resultados) -->
+        <div class="blog-empty" id="blogEmpty" style="display: none;">
+          <div class="blog-empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3>Nenhuma publicação encontrada</h3>
+          <p>Não encontramos nenhum artigo que corresponda aos filtros ou termos pesquisados.</p>
+          <button type="button" class="blog-btn-reset" id="blogResetBtn">Ver todas as notícias</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. SEÇÃO: CONTATO
+         ============================================================ -->
+    <section class="contact-section" id="contato">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="eyebrow eyebrow-dark">
+            <span class="eyebrow-dot"></span>
+            Canais Oficiais & Mensagem Direta
+          </p>
+          <h2>Entre em Contato Conosco</h2>
+          <p class="section-text">
+            Tem interesse em implementar a Arborização Inteligente na sua cidade, escola ou projeto? Fale diretamente com nossa equipe!
+          </p>
+        </div>
+
+        <div class="contact-main-wrapper">
+          <!-- Formulário de Contato Rápido -->
+          <div class="contact-form-container">
+            <div class="contact-form-header">
+              <span class="contact-form-badge">Mensagem Direta</span>
+              <h3>Envie uma Mensagem</h3>
+              <p>Preencha os campos abaixo para tirar dúvidas, propor projetos ou solicitar parcerias com nossos pesquisadores.</p>
+            </div>
+
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="formName" class="form-label">Nome Completo</label>
+                <div class="input-wrapper">
+                  <input type="text" id="formName" name="name" class="form-input" placeholder="Ex: Maria Silva" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formEmail" class="form-label">E-mail para Retorno</label>
+                <div class="input-wrapper">
+                  <input type="email" id="formEmail" name="email" class="form-input" placeholder="Ex: maria.silva@exemplo.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formSubject" class="form-label">Assunto ou Tipo de Parceria</label>
+                <div class="input-wrapper select-wrapper">
+                  <select id="formSubject" name="subject" class="form-input form-select" required>
+                    <option value="" disabled selected>Selecione um assunto...</option>
+                    <option value="parceria-municipal">Parceria com Prefeitura / Gestão Pública</option>
+                    <option value="pesquisa-academica">Pesquisa Científica & Acadêmica (UFS/Outras)</option>
+                    <option value="sensores-iot">Implementação de Sensores IoT & Drones</option>
+                    <option value="educacao-comunidade">Ações Educacionais e nas Escolas</option>
+                    <option value="duvidas-gerais">Dúvidas Gerais sobre o Projeto</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label">Sua Mensagem</label>
+                <div class="input-wrapper">
+                  <textarea id="formMessage" name="message" class="form-input form-textarea" rows="4" placeholder="Descreva brevemente como podemos colaborar com a arborização da sua região..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary contact-submit-btn" id="contactSubmitBtn">
+                <span>Enviar Mensagem</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Cards dos Canais Oficiais -->
+          <div class="contact-channels-grid">
+            <!-- Card 1: E-mail Oficial -->
+            <div class="contact-channel-card">
+              <div class="contact-channel-icon email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-channel-content">
+                <span class="contact-channel-label">E-mail Oficial</span>
+                <h3>Fale por E-mail</h3>
+                <p>Envie propostas, solicitações de parcerias municipais, convênios acadêmicos ou tire dúvidas com nossa equipe.</p>
+                <a href="mailto:arborizacaointeligente1@gmail.com" class="btn btn-primary contact-channel-btn">
+                  <span>Enviar E-mail</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </a>
+                <span class="contact-channel-info">arborizacaointeligente1@gmail.com</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Instagram Oficial -->
+            <div class="contact-channel-card">
+              <div class="contact-channel-icon instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <div class="contact-channel-content">
+                <span class="contact-channel-label">Redes Sociais</span>
+                <h3>Siga no Instagram</h3>
+                <p>Acompanhe atualizações em tempo real, registros em campo, novidades tecnológicas e eventos em que participamos.</p>
+                <a href="https://www.instagram.com/arborizacao_inteligente?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="btn btn-primary contact-channel-btn instagram-btn">
+                  <span>Acessar Instagram</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <span class="contact-channel-info">@arborizacao_inteligente</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Origem & Localização -->
+            <div class="contact-channel-card">
+              <div class="contact-channel-icon location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-channel-content">
+                <span class="contact-channel-label">Base do Projeto</span>
+                <h3>Localização & Origem</h3>
+                <p>Iniciativa nascida em Sergipe, vinculada à comunidade acadêmica da UFS, desenvolvida para impactar o Nordeste e o Brasil.</p>
+                <div class="contact-location-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>Aracaju, Sergipe — Brasil</span>
+                </div>
+                <span class="contact-channel-info">Universidade Federal de Sergipe (UFS)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Leitor de Artigo do Blog -->
+    <div id="newsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content blog-modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Fechar modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <img id="modalImage" src="" alt="" class="modal-image" />
+          <div class="modal-badges-row">
+            <span id="modalBadge" class="modal-badge"></span>
+            <span id="modalReadTime" class="modal-read-time"></span>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-author-bar">
+            <div class="modal-author-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="modal-author-info">
+              <span id="modalAuthor" class="modal-author-name">Equipe Arbo Inteligente</span>
+              <span id="modalDate" class="modal-date"></span>
+            </div>
+          </div>
+
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription" class="modal-description"></p>
+
+          <div id="modalContent" class="modal-full-content"></div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="modal-share-btn" id="modalShareBtn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span>Compartilhar</span>
+          </button>
+          <button class="modal-btn btn-secondary" id="modalCloseBtn" type="button">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificação Toast de Sucesso (Copiar Link / Envio de Form) -->
+    <div id="blogToast" class="blog-toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <!-- ============================================================
+       7. FOOTER (Copy, Instagram, E-mail, ODS)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <img class="brand-logo" src="assets/logo.png" alt="Logo Arborização Inteligente" />
+          <span class="brand-text">
+            <strong>Arborização Inteligente</strong>
+            <small>Tecnologia e dados para cidades sustentáveis</small>
+          </span>
+        </a>
+        <p class="footer-tagline">
+          "Uma cidade inteligente é aquela que usa tecnologia para preservar a vida."
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#arborizacao">Arborização Urbana</a></li>
+          <li><a href="#solucao">Nossa Solução & Planos</a></li>
+          <li><a href="#quem-somos">Quem Somos & Metas</a></li>
+          <li><a href="#eventos">Destaques do Projeto</a></li>
+          <li><a href="#noticias">Blog do Projeto</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-group">
+        <h4>Contato Oficial</h4>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:arborizacaointeligente1@gmail.com">arborizacaointeligente1@gmail.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="https://www.instagram.com/arborizacao_inteligente?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@arborizacao_inteligente</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Aracaju, Sergipe — Brasil</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="copy-text">
+        &copy; 2026 Arborização Inteligente. Todos os direitos reservados.
+      </p>
+      <div class="footer-bottom-badges">
+        <span>ODS 11 • Cidades Sustentáveis</span>
+        <span>ODS 13 • Ação Climática</span>
+        <span>ODS 15 • Vida Terrestre</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="news-data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,17 +1,43 @@
 const menuToggle = document.getElementById('menu-toggle');
 const mainNav = document.getElementById('main-nav');
 const topbar = document.getElementById('topbar');
+const navBackdrop = document.getElementById('navBackdrop');
+const navCloseBtn = document.getElementById('navCloseBtn');
+
+function setMenuState(isOpen) {
+  if (!mainNav || !menuToggle) return;
+  mainNav.classList.toggle('open', isOpen);
+  menuToggle.classList.toggle('open', isOpen);
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  if (navBackdrop) {
+    navBackdrop.classList.toggle('show', isOpen);
+  }
+  document.body.classList.toggle('nav-open', isOpen);
+}
 
 menuToggle?.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  const willOpen = !mainNav.classList.contains('open');
+  setMenuState(willOpen);
+});
+
+navCloseBtn?.addEventListener('click', () => {
+  setMenuState(false);
+});
+
+navBackdrop?.addEventListener('click', () => {
+  setMenuState(false);
 });
 
 mainNav?.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
-    mainNav?.classList.remove('open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
+    setMenuState(false);
   });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mainNav?.classList.contains('open')) {
+    setMenuState(false);
+  }
 });
 
 window.addEventListener('scroll', () => {
@@ -54,6 +80,7 @@ class BlogManager {
     this.emptyEl = document.getElementById('blogEmpty');
     this.searchInput = document.getElementById('blogSearchInput');
     this.searchClearBtn = document.getElementById('blogSearchClear');
+    this.searchForm = document.getElementById('blogSearchForm');
     this.categoryBtns = document.querySelectorAll('.category-btn');
     this.resetBtn = document.getElementById('blogResetBtn');
 
@@ -77,11 +104,23 @@ class BlogManager {
   }
 
   bindEvents() {
+    // Submissão do formulário de busca semântico
+    this.searchForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (this.searchInput) {
+        this.searchQuery = this.searchInput.value.trim().toLowerCase();
+        if (this.searchClearBtn) {
+          this.searchClearBtn.style.display = this.searchQuery ? 'inline-flex' : 'none';
+        }
+        this.render();
+      }
+    });
+
     // Busca em tempo real
     this.searchInput?.addEventListener('input', (e) => {
       this.searchQuery = e.target.value.trim().toLowerCase();
       if (this.searchClearBtn) {
-        this.searchClearBtn.style.display = this.searchQuery ? 'block' : 'none';
+        this.searchClearBtn.style.display = this.searchQuery ? 'inline-flex' : 'none';
       }
       this.render();
     });
@@ -642,6 +681,7 @@ class EventsCarousel {
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const toast = document.getElementById('blogToast');
+  const submitBtn = document.getElementById('contactSubmitBtn');
 
   if (!form) return;
 
@@ -649,18 +689,53 @@ function initContactForm() {
     e.preventDefault();
 
     const nameInput = document.getElementById('formName');
-    const senderName = nameInput ? nameInput.value.trim() : 'Obrigado';
+    const emailInput = document.getElementById('formEmail');
+    const subjectInput = document.getElementById('formSubject');
+    const messageInput = document.getElementById('formMessage');
 
-    if (toast) {
-      toast.textContent = `✓ Mensagem recebida, ${senderName}! Entraremos em contato com você pelo e-mail informado.`;
-      toast.classList.add('show');
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const message = messageInput ? messageInput.value.trim() : '';
 
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 4500);
+    if (!name || !email || !message) {
+      if (toast) {
+        toast.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+      return;
     }
 
-    form.reset();
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.classList.add('is-loading');
+      submitBtn.innerHTML = `
+        <svg class="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+        </svg>
+        <span>Enviando...</span>
+      `;
+    }
+
+    setTimeout(() => {
+      if (toast) {
+        toast.textContent = `✓ Mensagem recebida, ${name}! Entraremos em contato com você pelo e-mail informado.`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4500);
+      }
+
+      form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('is-loading');
+        submitBtn.innerHTML = `
+          <span>Enviar Mensagem</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        `;
+      }
+    }, 600);
   });
 }
 
