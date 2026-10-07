@@ -7,8 +7,7 @@ export default function TeamSection() {
       <div className="container">
         <div className="section-header text-center">
           <p className="eyebrow eyebrow-dark">
-            <span className="eyebrow-dot"></span>
-            Equipe, Metas & Objetivos
+            Equipe, Metas &amp; Objetivos
           </p>
           <h2>Quem Somos Nós, Metas e Objetivos</h2>
           <p className="section-text">
@@ -93,17 +92,35 @@ export default function TeamSection() {
 
           {/* Selos ODS */}
           <div className="ods-wrapper">
-            <span className="ods-label">Alinhamento Estratégico com os Objetivos de Desenvolvimento Sustentável (ONU):</span>
+            <span className="ods-label">
+              Alinhamento Estratégico com os{' '}
+              <a
+                href="https://brasil.un.org/pt-br/sdgs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ods-main-link"
+                title="Acessar página oficial dos ODS na ONU Brasil"
+              >
+                Objetivos de Desenvolvimento Sustentável (ONU Brasil ↗)
+              </a>:
+            </span>
             <div className="ods-badges-list">
               {ODS_ITEMS.map((ods) => (
-                <div key={ods.id} className={`ods-badge-card ${ods.className}`}>
+                <a
+                  key={ods.id}
+                  href={ods.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`ods-badge-card ${ods.className}`}
+                  title={`Ver detalhes oficiais do ${ods.code} no portal da ONU`}
+                >
                   <div className="ods-image-wrapper">
                     <img src={ods.img} alt={`${ods.code} - ${ods.title}`} className="ods-badge-img" loading="lazy" />
                   </div>
-                  <span className="ods-number">{ods.code}</span>
+                  <span className="ods-number">{ods.code} ↗</span>
                   <strong>{ods.title}</strong>
                   <p>{ods.desc}</p>
-                </div>
+                </a>
               ))}
             </div>
           </div>

@@ -84,7 +84,6 @@ export default function EventsSection() {
       <div className="container">
         <div className="events-header text-center">
           <p className="eyebrow eyebrow-dark">
-            <span className="eyebrow-dot"></span>
             Destaques
           </p>
           <h2>Destaques do Projeto</h2>
@@ -139,6 +138,19 @@ export default function EventsSection() {
                       <span className="event-highlight-tag">{event.highlightTag}</span>
                       <span className="event-attendees-tag">{event.attendeesTag}</span>
                     </div>
+                    {event.sourceUrl && (
+                      <div className="event-source-row">
+                        <a
+                          href={event.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="event-source-link"
+                          title={`Conferir portal oficial: ${event.sourceOrg}`}
+                        >
+                          Órgão / Realização: {event.sourceOrg} ↗
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

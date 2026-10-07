@@ -17,10 +17,10 @@ export const BLOG_POSTS = [
       <p>O site foi estruturado para apresentar com clareza e profundidade técnica cada pilar da nossa solução:</p>
       
       <ul>
-        <li><strong>Diagnóstico Urbano:</strong> Contextualização do desafio urgente da cobertura vegetal no Brasil e em Sergipe, com base em dados oficiais do Censo IBGE.</li>
-        <li><strong>Tecnologia & Hardware IoT:</strong> Detalhamento dos sensores em campo (ESP32, DHT11, AHT25), inteligência artificial preditiva e monitoramento aéreo por drones.</li>
-        <li><strong>Alinhamento aos ODS da ONU:</strong> Nosso compromisso direto com os Objetivos de Desenvolvimento Sustentável 11 (Cidades Sustentáveis), 13 (Ação Climática) e 15 (Vida Terrestre).</li>
-        <li><strong>Equipe e Reconhecimentos:</strong> Quem faz a ciência acontecer e as premiações conquistadas pelo projeto, como CIENART, ROBOT-SE e Mini COP 30.</li>
+        <li><strong>Diagnóstico Urbano:</strong> Contextualização do desafio urgente da cobertura vegetal no Brasil e em Sergipe, com base em dados oficiais do <a href="https://censo2022.ibge.gov.br/" target="_blank" rel="noopener noreferrer">Censo Demográfico do IBGE (2022) ↗</a>.</li>
+        <li><strong>Tecnologia & Hardware IoT:</strong> Detalhamento dos sensores em campo (<a href="https://www.espressif.com/en/products/socs/esp32" target="_blank" rel="noopener noreferrer">ESP32 ↗</a>, DHT11, AHT25), inteligência artificial preditiva e monitoramento aéreo por drones.</li>
+        <li><strong>Alinhamento aos ODS da ONU:</strong> Nosso compromisso direto com os <a href="https://brasil.un.org/pt-br/sdgs" target="_blank" rel="noopener noreferrer">Objetivos de Desenvolvimento Sustentável da ONU ↗</a>: ODS 11 (Cidades Sustentáveis), 13 (Ação Climática) e 15 (Vida Terrestre).</li>
+        <li><strong>Equipe e Reconhecimentos:</strong> Quem faz a ciência acontecer e as premiações conquistadas pelo projeto, como <a href="https://www.ufs.br/" target="_blank" rel="noopener noreferrer">CIENART (UFS) ↗</a>, ROBOT-SE e Mini COP 30.</li>
         <li><strong>Canais Abertos de Contato:</strong> Acesso direto para parcerias governamentais, acadêmicas e comunitárias.</li>
       </ul>
 

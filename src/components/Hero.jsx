@@ -9,13 +9,12 @@ export default function Hero() {
       <div className="hero container">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span className="eyebrow-dot"></span>
             Sistema de Monitoramento Arbóreo Inteligente
           </p>
           <h1>Arborização Inteligente</h1>
           <p className="hero-slogan">"Uma cidade inteligente é aquela que usa tecnologia para preservar a vida."</p>
           <p className="lead">
-            Nascemos com o propósito de transformar a arborização urbana através de dados estratégicos, telemetria IoT e inteligência artificial. Considerando que Sergipe apresenta o <strong>menor índice de vias arborizadas do Brasil</strong>, segundo o <strong>Censo do IBGE (2022)</strong>, criamos uma solução completa para fornecer dados que auxiliem a gestão pública e a população na tomada de decisões eficientes, reduzindo ilhas de calor e priorizando espécies nativas.
+            Nascemos com o propósito de transformar a arborização urbana através de dados estratégicos, telemetria IoT e inteligência artificial. Considerando que Sergipe apresenta o <strong>menor índice de vias arborizadas do Brasil</strong>, segundo o <a href="https://censo2022.ibge.gov.br/" target="_blank" rel="noopener noreferrer" className="hero-citation-link" title="Acessar dados oficiais do Censo Demográfico do IBGE"><strong>Censo do IBGE (2022) ↗</strong></a>, criamos uma solução completa para fornecer dados que auxiliem a gestão pública e a população na tomada de decisões eficientes, reduzindo ilhas de calor e priorizando espécies nativas.
           </p>
 
           <div className="hero-actions">
@@ -46,7 +45,9 @@ export default function Hero() {
               <span className="highlight-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="currentColor"/></svg>
               </span>
-              <span>Alinhado aos ODS da ONU</span>
+              <a href="https://brasil.un.org/pt-br/sdgs" target="_blank" rel="noopener noreferrer" className="hero-highlight-link" title="Conheça os Objetivos de Desenvolvimento Sustentável da ONU">
+                Alinhado aos ODS da ONU ↗
+              </a>
             </li>
           </ul>
         </div>

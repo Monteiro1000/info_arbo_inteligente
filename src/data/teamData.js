@@ -128,7 +128,8 @@ export const ODS_ITEMS = [
     title: "Cidades e Comunidades Sustentáveis",
     desc: "Tornar as cidades e assentamentos inclusivos, seguros, resilientes e sustentáveis.",
     img: "design/ods/ODS11.webp",
-    className: "ods-11"
+    className: "ods-11",
+    url: "https://brasil.un.org/pt-br/sdgs/11"
   },
   {
     id: "ods-13",
@@ -136,7 +137,8 @@ export const ODS_ITEMS = [
     title: "Ação Contra a Mudança Global do Clima",
     desc: "Adotar medidas urgentes para combater a mudança climática e seus impactos locais.",
     img: "design/ods/ODS13.webp",
-    className: "ods-13"
+    className: "ods-13",
+    url: "https://brasil.un.org/pt-br/sdgs/13"
   },
   {
     id: "ods-15",
@@ -144,6 +146,7 @@ export const ODS_ITEMS = [
     title: "Vida Terrestre",
     desc: "Proteger, recuperar e promover o uso sustentável dos ecossistemas terrestres.",
     img: "design/ods/ODS15.png",
-    className: "ods-15"
+    className: "ods-15",
+    url: "https://brasil.un.org/pt-br/sdgs/15"
   }
 ];

@@ -69,9 +69,33 @@ export default function Footer() {
           &copy; 2026 Arborização Inteligente. Todos os direitos reservados.
         </p>
         <div className="footer-bottom-badges">
-          <span>ODS 11 • Cidades Sustentáveis</span>
-          <span>ODS 13 • Ação Climática</span>
-          <span>ODS 15 • Vida Terrestre</span>
+          <a
+            href="https://brasil.un.org/pt-br/sdgs/11"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-ods-link"
+            title="Conheça o ODS 11 da ONU"
+          >
+            ODS 11 — Cidades Sustentáveis ↗
+          </a>
+          <a
+            href="https://brasil.un.org/pt-br/sdgs/13"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-ods-link"
+            title="Conheça o ODS 13 da ONU"
+          >
+            ODS 13 — Ação Climática ↗
+          </a>
+          <a
+            href="https://brasil.un.org/pt-br/sdgs/15"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-ods-link"
+            title="Conheça o ODS 15 da ONU"
+          >
+            ODS 15 — Vida Terrestre ↗
+          </a>
         </div>
       </div>
     </footer>

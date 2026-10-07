@@ -84,10 +84,9 @@ export default function BlogSection({ onOpenPost }) {
       <div className="container">
         <div className="news-header blog-header">
           <p className="eyebrow eyebrow-dark">
-            <span className="eyebrow-dot"></span>
             Atualizações e Artigos
           </p>
-          <h2>Blog & Notícias do Projeto</h2>
+          <h2>Blog &amp; Notícias do Projeto</h2>
           <p className="section-text">
             Acompanhe as publicações mais recentes, artigos técnicos, pesquisas de campo e marcos da Arborização Inteligente.
           </p>
@@ -173,7 +172,7 @@ export default function BlogSection({ onOpenPost }) {
                 <div className="featured-content-area">
                   <div className="blog-meta-row">
                     <span className="blog-date-text">{featuredPost.date}</span>
-                    <span>•</span>
+                    <span className="blog-meta-divider">|</span>
                     <span className="blog-read-time-pill">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                         <circle cx="12" cy="12" r="10" />

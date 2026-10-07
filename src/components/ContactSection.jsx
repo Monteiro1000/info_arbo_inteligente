@@ -6,7 +6,6 @@ export default function ContactSection() {
       <div className="container">
         <div className="section-header text-center">
           <p className="eyebrow eyebrow-dark">
-            <span className="eyebrow-dot"></span>
             Canais Oficiais &amp; Mensagem Direta
           </p>
           <h2>Entre em Contato Conosco</h2>
@@ -77,7 +76,13 @@ export default function ContactSection() {
               <div className="contact-channel-content">
                 <span className="contact-channel-label">Base do Projeto</span>
                 <h3>Localização &amp; Origem</h3>
-                <p>Iniciativa nascida em Sergipe, vinculada à comunidade acadêmica da UFS, desenvolvida para impactar o Nordeste e o Brasil.</p>
+                <p>
+                  Iniciativa nascida em Sergipe, vinculada à comunidade acadêmica da{' '}
+                  <a href="https://www.ufs.br/" target="_blank" rel="noopener noreferrer" className="contact-inline-link" title="Acessar portal da UFS">
+                    UFS ↗
+                  </a>
+                  , desenvolvida para impactar o Nordeste e o Brasil.
+                </p>
                 <div className="contact-location-badge">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                     <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
@@ -85,7 +90,15 @@ export default function ContactSection() {
                   </svg>
                   <span>Aracaju, Sergipe — Brasil</span>
                 </div>
-                <span className="contact-channel-info">Universidade Federal de Sergipe (UFS)</span>
+                <a
+                  href="https://www.ufs.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-channel-info contact-channel-link"
+                  title="Acessar portal oficial da Universidade Federal de Sergipe"
+                >
+                  Universidade Federal de Sergipe (UFS) ↗
+                </a>
               </div>
             </div>
           </div>
